@@ -1,7 +1,10 @@
 ---
 layout: post
 title:  Setting up a Jekyll blog on Github Pages
-categories: jekyll howto github
+tags: 
+- jekyll 
+- howto 
+- github
 ---
 
 Why this blog?
