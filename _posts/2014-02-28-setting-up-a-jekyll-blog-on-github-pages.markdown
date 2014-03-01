@@ -1,0 +1,268 @@
+---
+layout: post
+title:  Setting up a Jekyll blog on Github Pages
+tags: 
+- jekyll 
+- howto 
+- github
+---
+
+Why this blog?
+--------------
+Welcome! I've set up this blog to share what I've been learning
+through venues such as meetups 
+([Boston Python User Group](http://www.meetup.com/bostonpython/) 
+and [PyLadies Boston](http://www.meetup.com/PyLadies-Boston/)
+are my main ones), conferences ([Pycon 2014](https://us.pycon.org/2014/) 
+in Montreal!), MOOCs ([Udacity](http://udacity.com) and 
+[Coursera](http://coursera.org)). 
+I decided to make this a [Jekyll](http://jekyllrb.com) blog, hosted on
+[Github Pages](http://pages.github.com/), 
+and I'm going to describe the process of setting it up as my first post.
+
+What are Jekyll and Github Pages?
+---------------------------------
+Jekyll is a Ruby-based static blog generator. You write your posts in
+actual text files, in either Markdown or Textile markup, and it auto-generates
+your post in a blog format. It also has particularly strong support for
+code markup, using Pygments. Github Pages provides free hosting for
+Jekyll blogs -- in fact, they're *powered* by Jekyll by default -- so
+you can update your blog by just making a `git commit`.
+
+Some things to be aware of before making the decision to go with the
+Jekyll/Github Pages combination:
+
+* You won't be able to use Jekyll plug-ins on Github Pages, because 
+  Github generates Pages sites with `jekyll --safe`. However,
+  there is a workarond: you can generate the static files yourself
+  and commit those to your repository.
+* By default, Jekyll doesn't come with comments, and you won't be able to use
+  the Jekyll comments plug-ins. But, you can use commenting solutions included
+  via only Javascript such as [Disqus](http://disqus.com/) as an alternative.
+  
+I found various guides to how to set up Jekyll with Github Pages:
+
+* [Getting started With Github Pages (24 Ways)](http://24ways.org/2013/get-started-with-github-pages/)
+* [Building a Docs site with Jekyll + Github Pages](http://blog.jetstrap.com/2013/03/building-a-docs-site-with-jekyll-github-pages/)
+
+There's also the official documentation:
+
+* [Github Pages docs](https://help.github.com/categories/20/articles) [(Jekyll page)](https://help.github.com/articles/using-jekyll-with-pages)
+* [Jekyll's Github Pages docs](http://jekyllrb.com/docs/github-pages/)
+
+In this post, I'll describe the process of setting up a minimal Jekyll blog, 
+without messing about with the look, using the best practices I gathered 
+from the sites linked above.
+
+Setting up your Jekyll blog in Github Pages
+-------------------------------------------
+
+In eight easy steps:
+
+**Step 1.** Decide whether you want your page to be hosted at
+   `username.github.io` or `username.github.io/projectname`.
+   
+I decided to reserve the former for a possible homepage rather than my code
+blog, so I decided to go with the latter, and the instructions below will
+be for this usecase. If the former, your repo must be named
+`username.github.io` and you will work on the `master` branch.
+If the latter, you can name your repo anything you want,
+but you will work on a branch called `gh-pages`.
+The instructions below will be for a project page. 
+[(More)](https://help.github.com/articles/user-organization-and-project-pages)
+
+**Step 2.** Set up your Github project repository
+
+I usually do this through Github, 
+clicking the green New button on the Repositories tab.
+I called my repo `code-blog`. This means that my blog will live at
+`michelleful.github.io/code-blog`.
+
+Then clone your repo to a local directory using `git clone`.
+
+**Step 3.** Create a `gh-pages` branch. Github Pages will generate your site from
+the files in this branch.
+
+{% highlight bash %}
+git checkout --orphan gh-pages
+{% endhighlight %}
+
+The `--orphan` flag means it will create an empty branch, just what we want.
+
+**Step 4.** Install Ruby, Bundler and Jekyll.
+
+Basically, follow the advice on 
+[this page](https://help.github.com/articles/using-jekyll-with-pages),
+but I'll recapitulate it here:
+
+You'll have to install Ruby and its dev tools.
+
+{% highlight bash %}
+sudo apt-get install ruby ruby-dev
+{% endhighlight %}
+
+Create a file named `Gemfile` in your current directory, and put this code inside:
+
+{% highlight bash %}
+source 'https://rubygems.org'
+gem 'github-pages'
+{% endhighlight %}
+
+Now run:
+
+{% highlight bash %}
+sudo gem install bundler
+{% endhighlight %}
+
+If everything goes well, you'll get this message: 
+
+{% highlight text %}
+Your bundle is complete!
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+{% endhighlight %}
+
+**Step 5.** Create your Jekyll blog.
+
+{% highlight bash %}
+jekyll new .
+{% endhighlight %}
+
+This creates several files and subdirectories:
+
+* `index.html` serves up the main page 
+* `_config.yml` contains configuration options
+* `_layouts/` contains the code that controls the look and feel of the site
+* `_posts/` is where you'll put your actual blogpost textfiles.
+* `_site/` contains the static HTML code generated by Jekyll.
+* `.gitignore` tells `git` which files to ignore when adding. `_site/` will
+  be in here by default, as we will want Github to regenerate the Jekyll site
+  when we push the code.
+
+**Step 6.** Check that everything's working so far:
+
+{% highlight bash %}
+bundle exec jekyll serve
+{% endhighlight %}
+
+If you go to `localhost:4000` in your browser now, you should see 
+a basic Jekyll site.
+
+**Step 7.** Edit the configuration and layout files to use `site.baseurl`
+
+If you were to push your code to Github now and go to
+`username.github.io/projectname`, you would see a page with broken CSS.
+Clicking on the sample post would also give you a 404 error.
+This is because Jekyll's links are all pointing to `username.github.io/filename.ext`
+rather than `username.github.io/projectname/filename.ext`.
+
+You can fix this by first editing `_config.yml`.
+Change the name of the blog, but more importantly, add
+this line, changing `projectname` to whatever you've called your repo:
+
+{% highlight bash %}
+baseurl: /projectname
+{% endhighlight %}
+
+Next, edit `_layouts/default.html` and `index.html` so that all the relative URLs
+are prefixed with `{% raw %}{{site.baseurl}} {% endraw %}`.
+For example, `_layouts/default.html` should look like this:
+
+{% highlight html+smarty %}
+    ...
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+
+    </head>
+    <body>
+
+        <div class="site">
+          <div class="header">
+            <h1 class="title"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+            <a class="extra" href="{{ site.baseurl }}/">home</a>
+          </div>
+    ...
+{% endhighlight %}
+
+You can also change the title and personal information while you're at it.
+
+From now on, you should run the following command locally:
+
+{% highlight bash %}
+bundle exec jekyll serve --baseurl '' --watch
+{% endhighlight %}
+
+`--baseurl ''` ensures that the relative URLs resolve correctly,
+while `--watch` will regenerate the site every time you save a file within it,
+saving time in development. Just refresh your browser to see the new site.
+
+**Step 8.** Finally, let's push this code to Github.
+
+{% highlight bash %}
+git add .
+git commit -m "Basic Jekyll site"
+git push origin gh-pages
+{% endhighlight %}
+
+This pushes the `gh-pages` branch to Github.
+Now wait about ten minutes, then go to `http://username.github.io/projectname`.
+You should see your basic Jekyll blog.
+
+You can now get started with the rest of Jekyll, posting, modifying the look
+of your blog, etc. [Start here!](http://jekyllrb.com/docs/frontmatter/)
+
+Troubleshooting
+---------------
+
+**Problem 1.** You get the following error while executing the command
+`sudo gem install bundler`. 
+
+{% highlight text %}
+Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+
+/usr/bin/ruby1.9.1 extconf.rb 
+/usr/lib/ruby/1.9.1/rubygems/custom_require.rb:36:in `require': 
+cannot load such file -- mkmf (LoadError)
+from /usr/lib/ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
+from extconf.rb:1:in `<main>'
+
+Gem files will remain installed in /var/lib/gems/1.9.1/gems/RedCloth-4.2.9 for inspection.
+Results logged to /var/lib/gems/1.9.1/gems/RedCloth-4.2.9/ext/redcloth_scan/gem_make.out
+An error occurred while installing RedCloth (4.2.9), and Bundler cannot
+continue.
+Make sure that `gem install RedCloth -v '4.2.9'` succeeds before bundling.
+{% endhighlight %}
+
+If you're on a Debian system, you might not have the `ruby-dev` package installed.
+
+{% highlight bash %}
+sudo apt-get install ruby-dev
+{% endhighlight %}
+
+**Problem 2.** You get a "404: There isn't a GitHub Page here" on
+`username.github.io/projectname` after committing your code to the Github repo.
+
+Check the following:
+
+* Has it been less than 10 minutes since you committed your initial Jekyll build?
+  If so, Github might not have generated the site yet.
+* Does the same code work on your local Jekyll build? If not, look at the error
+  messages that you get with `bundle exec jekyll serve...` and try to diagnose
+  the specific error.
+* Did you set up Jekyll and make your changes in the `gh-pages` branch?
+  Did you push that branch to Github?
+
+**Problem 3.** The CSS on `username.github.io/projectname` looks broken.
+
+You might have missed a relative URL in `_layouts/default.html`. Go back to
+Step 7.
+
+**Problem 4.** When you click on a blogpost, you get a 
+"404: There isn't a GitHub Page here".
+
+Check to see whether the blogpost URL it's looking for is of the form 
+`username.github.io/projectname/year/month/day/...`.
+If it's missing `projectname`, you missed a relative URL in `index.html`. 
+Go back to Step 7.
