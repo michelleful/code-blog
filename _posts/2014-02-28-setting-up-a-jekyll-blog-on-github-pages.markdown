@@ -37,8 +37,9 @@ Jekyll/Github Pages combination:
   there is a workarond: you can generate the static files yourself
   and commit those to your repository.
 * By default, Jekyll doesn't come with comments, and you won't be able to use
-  the Jekyll comments plug-ins. But, you can use commenting solutions included
-  via only Javascript such as [Disqus](http://disqus.com/) as an alternative.
+  the Jekyll comments plug-ins. Instead, 
+  [you can use third party commenting solutions]({% post_url 2014-03-16-adding-third-party-comments-to-a-jekyll-blog %}) 
+  included via only Javascript such as [Disqus](http://disqus.com/) as an alternative.
   
 I found various guides to how to set up Jekyll with Github Pages:
 
