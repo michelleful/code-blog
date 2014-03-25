@@ -138,7 +138,7 @@ Also, there are times when Yamli
 doesn't suggest a word I might expect, for example "ab" doesn't give me 
 August (آب). On the whole, though, I'm pretty pleased with the result.
 
-<image src="{{ site.url }}/assets/fuzzy_madrasa.png" width="100%"
+<image src="{{ site.baseurl }}/assets/fuzzy_madrasa.png" width="100%"
        alt="Screenshot of the Fuzzy Arabic Dictionary with the word 'madrasa'">
 
 <a href="http://fuzzyarabic.herokuapp.com/">Give it a try</a>, 
