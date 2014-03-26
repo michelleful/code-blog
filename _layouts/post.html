@@ -1,11 +1,16 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
+
+<p><a href="{{ site.baseurl }}/">&laquo; All posts</a></p>
+
+<h3>{{ page.title }}</h3>
 <p class="meta">{{ page.date | date_to_string }}</p>
 
-<div class="post">
+<div class="post topspace">
 {{ content }}
 </div>
+
+<p class="topspace bottomspace"><a href="{{ site.baseurl }}/">&laquo; All posts</a></p>
 
 {% include comments.html %}

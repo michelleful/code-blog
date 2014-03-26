@@ -10,35 +10,51 @@
         <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css">
 
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+<!--        <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css"> -->
+
+        <!-- Bootstrap -->
+        <link href="{{ site.baseurl }}/css/bootstrap3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom Layout CSS -->
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu&subset=latin' rel='stylesheet' type='text/css'>
+        <link href="{{ site.baseurl }}/css/index.css" rel="stylesheet" type="text/css">
+
 
     </head>
     <body>
 
-        <div class="site">
-          <div class="header">
-            <h1 class="title"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <a class="extra" href="{{ site.baseurl }}/">home</a>
-          </div>
+    <div class="row header">
+        <div class="col-md-5 col-md-offset-3 topspace bottomspace media">
+            <img class="media-object pull-left topspace" src="{{ site.baseurl }}/assets/images/default/P1030655_small_rounded.PNG" alt="Picture of me">
+            <div class="media-body topspace">
+            <p class="media-heading"><span class="big">Michelle Fullwood</span> <a href="mailto:maf@mit.edu">maf@mit.edu</a></p>
+                 <p>I'm a graduate student in linguistics at MIT.<br/>
+                 I work on problems in formal phonology and computational morphology.<br/>
+                 I like to code, especially in Python.</p> 
+            </div>
+        </div>
+    </div>
+
+    <div class="row topspace">
+
+    <div class="col-md-2 col-md-offset-1 text-center">
+        <div class="topspace">
+          <a href="https://github.com/michelleful?tab=repositories"><img src="{{ site.baseurl }}/assets/images/default/GitHub-Mark-120px-plus.png" alt="Link to Github" class="grey"></a>
+          <a href="https://github.com/michelleful?tab=repositories"><h3 class="negtopspace">Code</h3></a>
+        </div>
+        <br/>        
+        <div class="topspace">
+          <a href="https://www.linkedin.com/pub/michelle-fullwood/84/877/220"><div class="roundbutton grey">CV</div></a>
+          <a href="https://www.linkedin.com/pub/michelle-fullwood/84/877/220"><h3 class="negtopspace">Résumé</h3></a>
+        </div>
+    </div>
+
+    <div class="site col-md-6 bottomspace">
 
           {{ content }}
 
-          <div class="footer">
-            <div class="contact">
-              <p>
-                Michelle Fullwood<br />
-                Grad student and aspiring coder<br />
-                <a href="http://www.mit.edu/~maf">MIT webpage</a>
-              </p>
-            </div>
-            <div class="contact">
-              <p>
-                <a href="https://github.com/michelleful">github.com/michelleful</a><br />
-                <a href="https://twitter.com/michelleful">twitter.com/michelleful</a><br />
-              </p>
-            </div>
-          </div>
-        </div>
+    </div>
+    </div><!-- end row -->
 
     </body>
 </html>

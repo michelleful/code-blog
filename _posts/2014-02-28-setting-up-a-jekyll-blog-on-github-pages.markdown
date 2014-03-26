@@ -7,8 +7,8 @@ tags:
 - github
 ---
 
-Why this blog?
---------------
+### Why this blog?
+
 Welcome! I've set up this blog to share what I've been learning
 through venues such as meetups 
 ([Boston Python User Group](http://www.meetup.com/bostonpython/) 
@@ -20,8 +20,8 @@ I decided to make this a [Jekyll](http://jekyllrb.com) blog, hosted on
 [Github Pages](http://pages.github.com/), 
 and I'm going to describe the process of setting it up as my first post.
 
-What are Jekyll and Github Pages?
----------------------------------
+### What are Jekyll and Github Pages?
+
 Jekyll is a Ruby-based static blog generator. You write your posts in
 actual text files, in either Markdown or Textile markup, and it auto-generates
 your post in a blog format. It also has particularly strong support for
@@ -55,8 +55,7 @@ In this post, I'll describe the process of setting up a minimal Jekyll blog,
 without messing about with the look, using the best practices I gathered 
 from the sites linked above.
 
-Setting up your Jekyll blog in Github Pages
--------------------------------------------
+### Setting up your Jekyll blog in Github Pages
 
 In eight easy steps:
 
@@ -214,8 +213,7 @@ You should see your basic Jekyll blog.
 You can now get started with the rest of Jekyll, posting, modifying the look
 of your blog, etc. [Start here!](http://jekyllrb.com/docs/frontmatter/)
 
-Troubleshooting
----------------
+### Troubleshooting
 
 **Problem 1.** You get the following error while executing the command
 `sudo gem install bundler`. 

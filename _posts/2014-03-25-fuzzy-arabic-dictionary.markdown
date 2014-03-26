@@ -14,8 +14,7 @@ and <a href="https://github.com/michelleful/FuzzyArabicDict">the code is
 here</a>. Below, I discuss my motivations for building the dictionary
 and the tools I used to put it together.
 
-Arabic is hard!
----------------
+### Arabic is hard!
 
 Arabic is a difficult language to learn for English speakers.
 <a href="http://www.effectivelanguagelearning.com/language-guide/language-difficulty">
@@ -61,11 +60,11 @@ secondary constriction of the pharynx, which sounds like a normal /t/
 followed by a backer, rounder, lower vowel; there's a short vs long vowel
 distinction that English lacks...the list goes on.
 
-The dictionaries are crazy
---------------------------
+### The dictionaries work on a different logic
 
-Well, actually, they're very well-constructed, but you need to be intimately
-familiar with Arabic morphology to use them. Arabic words are constructed
+Arabic dictionaries aren't arranged alphabetically,
+but work within the logic of Arabic's distinctive morphology. 
+Arabic words are constructed
 on a non-concatenative, root-and-pattern schema. 
 For example, the following words are all related:
 
@@ -94,8 +93,7 @@ are organised by root.
 So in order to look up a word in a dictionary, you need to split a word
 into a root and pattern. Again, not an easy task for the beginning learner.
 
-Enter the Fuzzy Arabic Dictionary
----------------------------------
+### Enter the Fuzzy Arabic Dictionary
 
 This was actually the first webapp I ever built, probably around 2007, using
 CGI/Perl. When a user entered a word in English transliteration such as 
@@ -114,9 +112,11 @@ which lets you type words in English transliteration of Arabic chat alphabet
 and instantly suggests Arabic words they might correspond to.
 You can try it in the Yamlified textbox below.
 
+<div class="topspace bottomspace">
 <center>
 <input type="text" id="arabictextbox">
 </center>  
+</div>
 
 But there didn't seem to be a tool that combined those suggestions with
 an Arabic-English dictionary. 
@@ -138,14 +138,14 @@ Also, there are times when Yamli
 doesn't suggest a word I might expect, for example "ab" doesn't give me 
 August (آب). On the whole, though, I'm pretty pleased with the result.
 
-<image src="{{ site.baseurl }}/assets/fuzzy_madrasa.png" width="100%"
+<div class="topspace bottomspace">
+<image src="{{ site.baseurl }}/assets/images/201403/fuzzy_madrasa.png" width="100%"
        alt="Screenshot of the Fuzzy Arabic Dictionary with the word 'madrasa'">
+</div>
 
 <a href="http://fuzzyarabic.herokuapp.com/">Give it a try</a>, 
-and if you have bug reports*, suggestions, etc., 
+and if you have bug reports, suggestions, etc., 
 let me know in the comments.
-
-*I probably won't do anything if it's an IE problem, though. Sorry.
 
 
 <!-- YAMLI CODE START -->

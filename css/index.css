@@ -1,0 +1,32 @@
+body {font-family: Ubuntu,sans-serif; color:#555;}
+h1 {font-size: 200%; line-height: 150%; font-weight: bold;}
+h2, h3 {line-height:105%;font-weight: bold;}
+p, li, td {font-size: 120%; line-height: 130%;}
+td {padding-left: 10px; padding-right: 10px;}
+.header {background-color:#F2F2F2;}
+.big {font-size: 165%; font-weight: bold;}
+.grey {opacity:0.5; filter:alpha(opacity=50);}
+.topspace {margin-top:15pt;}
+.negtopspace {margin-top:7pt;}
+.bottomspace {margin-bottom:10pt;}
+.leftspace {margin-left:5pt;}
+.roundbutton {
+    width:119px;
+    height:119px;
+    border-radius:100%;
+    border-color: #171516;
+    border-width: 11px;
+    border-style: solid;
+    color:#171516;
+    font-size:50px;
+    line-height: 120px;
+    font-weight: bold;
+    margin:auto;
+}
+@media(max-width:767px){
+    p {padding-left: 10pt; padding-right: 10pt;}
+    h3 {padding-left: 10pt; padding-right: 10pt; text-align:center;}
+    img.pull-left {padding-left: 10pt;}
+    .col-md-2 .topspace {margin-top:0pt;}
+}
+
