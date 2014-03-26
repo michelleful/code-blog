@@ -7,8 +7,6 @@ tags:
 - github
 ---
 
-### Why this blog?
-
 Welcome! I've set up this blog to share what I've been learning
 through venues such as meetups 
 ([Boston Python User Group](http://www.meetup.com/bostonpython/) 
