@@ -34,10 +34,8 @@ according to their surroundings. For example, these are all the same
 letter:
 
 <div>
-<center>
 <image src="{{ site.baseurl }}/assets/images/201403/3ayn_four_shapes.png"
-       alt="Four shapes of the Arabic letter 3ayn">
-</center>
+       alt="Four shapes of the Arabic letter 3ayn" class="centerdiv">
 </div>
 
 Even more challenging, a large number of the sounds that these letters 
@@ -47,25 +45,21 @@ Here's ق /q/, the voiceless uvular stop, which to an English speaker
 might be an odd-sounding /k/:
 
 <div class="topspace bottomspace">
-<center>
-<audio controls>
+<audio controls class="centerdiv">
   <source src="http://upload.wikimedia.org/wikipedia/commons/1/19/Voiceless_uvular_plosive.ogg" type="audio/ogg">
   Your browser does not support the audio tag.
 </audio>
 <em>Source: <a href="http://en.wikipedia.org/wiki/Voiceless_uvular_stop">Wikipedia</a></em>
-</center>
 </div>
 
 The pharyngeal fricative ع /ʕ/ sounds like an /a/ with a sore throat:
 
 <div class="topspace bottomspace">
-<center>
-<audio controls>
+<audio controls class="centerdiv">
   <source src="http://upload.wikimedia.org/wikipedia/commons/c/cd/Voiced_pharyngeal_fricative.ogg" type="audio/ogg">
   Your browser does not support the audio tag.
 </audio>
 <em>Source: <a href="http://en.wikipedia.org/wiki/Voiced_pharyngeal_fricative">Wikipedia</a></em>
-</center>
 </div>
 
 The "emphatic" consonants such as ط /tˤ/ are pronounced with a 
@@ -100,9 +94,7 @@ alphabet</a> and instantly suggests Arabic words they might correspond to.
 You can try it in the Yamlified textbox below.
 
 <div class="topspace bottomspace">
-<center>
-<input type="text" id="arabictextbox">
-</center>
+<input type="text" id="arabictextbox" class="centerdiv">
 </div>
 
 At the same time, I replaced the Perl/CGI script with a simple Flask app

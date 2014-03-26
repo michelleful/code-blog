@@ -23,6 +23,8 @@ td {padding-left: 10px; padding-right: 10px;}
     font-weight: bold;
     margin:auto;
 }
+.centertext {text-align: center;}
+.centerdiv {display: block; margin-left: auto; margin-right: auto;}
 @media(max-width:767px){
     p {padding-left: 10pt; padding-right: 10pt;}
     h3 {padding-left: 10pt; padding-right: 10pt; text-align:center;}
