@@ -7,8 +7,6 @@ tags:
 - github
 ---
 
-### Yay comments!
-
 Look at the bottom of any of the posts on this blog and you'll see a
 brand new box for comments! It was pretty easy to set this up on Jekyll.
 (Whether or not it's hosted on Github Pages)
