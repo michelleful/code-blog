@@ -89,7 +89,7 @@ Which looks better to you, the first or second column?
 <table class="bottomspace">
   <tr><td>par<b>ti</b>cular</td><td>par<b>tic</b>ular</td></tr>
   <tr><td><b>tea</b>ching</td><td><b>teach</b>ing</td></tr>
-  <tr><td><b>di</b>fficult</td><td><b>diff</b>icult</td></tr>  
+  <tr><td><b>di</b>fficult</td><td><b>diff</b>icult</td></tr>
   <tr></td><b>ho</b>spital*</td><td><b>hos</b>pital</td></tr>
 </table>
 
