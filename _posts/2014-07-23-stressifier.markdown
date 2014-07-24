@@ -52,7 +52,7 @@ but no syllable boundaries. But [the Penn Phonetics Laboratory](http://www.ling.
 has an automated syllabifier and conveniently provides a syllabified version of CMUDICT.
 
 However, that doesn't solve our problem: we're not trying to show the highlighted phonological representation
-of the word, but the orthographical representation. And this is tricky: think about the digraphs like &lt;th&gt;,
+of the word, but the orthographical representation. Aligning the two is tricky: think about the digraphs like &lt;th&gt;,
 silent letters like the &lt;p&gt; of &lt;ptarmigan&gt;, or the many different pronunciations of &lt;ough&gt;
 (tough, trough, through, though). It's far from 1-to-1. In fact, it's many-to-many.
 
