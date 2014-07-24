@@ -8,10 +8,10 @@ tags:
 - projects
 ---
 
-**Summary:** Based on [a proposal by Redditor enthusiastOfRustMayb](http://www.reddit.com/r/language/comments/2bdpeu/teaching_french_spoken_english_emphasis_on/),
-I built an app that takes any English text you give it, and highlights the
-primary-stressed syllables in bold. The idea is to help learners of
-English figure out where stress goes. Try it [here](http://stressifier.herokuapp.com).
+**Summary:** Based on [a pro<b>po</b>sal by <b>Red</b>ditor enthusiastOfRustMayb](http://www.reddit.com/r/language/comments/2bdpeu/teaching_french_spoken_english_emphasis_on/),
+I built an app that takes <b>a</b>ny <b>Eng</b>lish text you give it, and <b>high</b>lights the
+<b>pri</b>mary-stressed <b>syl</b>lables in bold. The i<b>de</b>a is to help <b>lear</b>ners of
+<b>Eng</b>lish <b>fi</b>gure out where the stress goes. Try it [here](http://stressifier.herokuapp.com).
 
 
 ### Motivation
