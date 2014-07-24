@@ -20,12 +20,26 @@ Different languages have different systems of stress, which places prominence on
 certain syllables in a word and de-emphasises others. That's (partly) why different languages
 have such distinctive rhythms. It's one of the first things we learn - studies of newborn 
 babies have shown they can distinguish the prosody of their native language from that of
-other languages. Correspondingly, it's particularly difficult to acquire the prosody of
-another language.
+other languages. Correspondingly, it's particularly difficult to unlearn one's native prosody
+and relearn another. You can have the grammar down pat and the vocabulary of a native
+but still sound somehow "off".
 
-English has a particularly complex stress system. Primary stress usually falls on the antepenultimate syllable,
-but can also fall elsewhere. The verb "conflict" has stress on the second syllable, but the noun form "conflict"
-has stress on the initial syllable. Redditor enthusiastOfRustMayb's idea was to visually illustrate which
+In some languages like Hungarian, the stress rule is simple - stress the first syllable. Other
+languages stress the second, or the final syllable, etc. In English, we're not quite so lucky.
+
+English has a particularly complex stress system. English mostly follows the Latin stress rule,
+which is dependent on the weight of a syllable - the amount of phonetic material packed into it.
+Stress is on the penultimate syllable if it ends with a consonant (is closed) or has a long vowel
+or diphthong, but retreats to the antepenultimate syllable otherwise. For example, "a.gen.da"
+is stressed on "gen" because it is closed. But in "as.pa.ra.gus", the penultimate syllable "ra" is
+short and so the antepenultimate syllable "pa" is stressed instead. But there are loads of exceptions.
+Two-syllable loanwords from French usually stress the second syllable in defiance of the Latin
+stress rule, e.g. "adult". Then there are words like "conflict" where the first syllable is stressed
+if it's being used as a noun and the second syllable is stressed if it's being used as a verb.
+
+What this all amounts to is that learners of English pretty much need to memorise the stress patterns
+of individual words.
+Redditor enthusiastOfRustMayb's idea was to assist this process by visually illustrate which
 syllable carries primary stress. This would be rather annoying to do manually, so I thought I'd whip together
 a webapp that did the heavy lifting.
 
