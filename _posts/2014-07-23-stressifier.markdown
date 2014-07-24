@@ -90,7 +90,7 @@ Which looks better to you, the first or second column?
   <tr><td>par<b>ti</b>cular</td><td>par<b>tic</b>ular</td></tr>
   <tr><td><b>tea</b>ching</td><td><b>teach</b>ing</td></tr>
   <tr><td><b>di</b>fficult</td><td><b>diff</b>icult</td></tr>
-  <tr></td><b>ho</b>spital*</td><td><b>hos</b>pital</td></tr>
+  <tr><td><b>ho</b>spital&#42;</td><td><b>hos</b>pital</td></tr>
 </table>
 
 The first column follows the standard rules of syllabification, in particular
@@ -99,7 +99,7 @@ of a syllable as make a legal syllable), but the latter, which adhere more
 to the morphological structure of the word, looks more intuitive to me.
 Hyphenation algorithms tend to act more like Column B, and with good reason.
 
-*"Hospital" would actually standardly be syllabified as "hos.pi.tal" but
+&#42;"Hospital" would actually standardly be syllabified as "hos.pi.tal" but
 the automatic syllabification algorithm in the Penn Phonetics Toolkit
 appears to syllabify it as "ho.spi.tal".
 
