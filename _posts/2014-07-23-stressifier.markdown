@@ -76,6 +76,7 @@ Which looks better to you, the first or second column?
   <tr><td>par<b>ti</b>cular</td><td>par<b>tic</b>ular</td></tr>
   <tr><td><b>tea</b>ching</td><td><b>teach</b>ing</td></tr>
   <tr><td><b>di</b>fficult</td><td><b>diff</b>icult</td></tr>  
+  <tr></td><b>ho</b>spital*</td><td><b>hos</b>pital</td></tr>
 </table>
 
 The first column follows the standard rules of syllabification, in particular
@@ -83,6 +84,17 @@ the principle of onset maximization (squeeze as many consonants into the start
 of a syllable as make a legal syllable), but the latter, which adhere more
 to the morphological structure of the word, looks more intuitive to me.
 Hyphenation algorithms tend to act more like Column B, and with good reason.
+
+*"Hospital" would actually standardly be syllabified as "hos.pi.tal" but
+the automatic syllabification algorithm in the Penn Phonetics Toolkit
+appears to syllabify it as "ho.spi.tal".
+
+A third thing I debated about with myself was whether to italicise secondary
+stressed syllables, for example the "am" of "ambidextrous", which clearly
+has some local prominence although primary stress is clearly on "dex". 
+But looking at the results, I decided there was way
+too much visual clutter going on for it to be useful, so I nixed it.
+It wouldn't be very hard at all to add it back in, however.
 
 
 ### Conclusion
