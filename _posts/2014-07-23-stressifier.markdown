@@ -49,7 +49,7 @@ Finding the necessary data was not in itself so hard.
 The [CMU Pronouncing Dictionary](http://www.speech.cs.cmu.edu/cgi-bin/cmudict) is a great resource:
 it has pronunciations for more than 100,000 words including obscure names. These pronunciations include stresses,
 but no syllable boundaries. But [the Penn Phonetics Laboratory](http://www.ling.upenn.edu/phonetics/p2tk/) 
-has an automated syllabifier and conveniently provide a syllabified version of CMUDICT.
+has an automated syllabifier and conveniently provides a syllabified version of CMUDICT.
 
 However, that doesn't solve our problem: we're not trying to show the highlighted phonological representation
 of the word, but the orthographical representation. And this is tricky: think about the digraphs like &lt;th&gt;,
