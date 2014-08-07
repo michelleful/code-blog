@@ -137,10 +137,11 @@ the initial value of the accumulator must be of the same
 type as the return value of the list function.
 
 <form class="radioType">
-  <input type="radio" name="qn6" value="True">&nbsp;True</input><br/>
-  <input type="radio" name="qn6" value="False">&nbsp;False</input>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" name="qn6" value="correct" discuss="Ultimately, the accumulator gets returned, so the return type of the function should be the type of the accumulator.">&nbsp;True</input><br/>
+  <input type="radio" name="qn6" value="wrong">&nbsp;False</input>
+  <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <input type="submit" value="Check">
+  <div class="hint"></div>
 </form>
 <br/>
 
@@ -148,10 +149,11 @@ type as the return value of the list function.
 of the list.
 
 <form class="radioType">
-  <input type="radio" name="qn7" value="True">&nbsp;True</input><br/>
-  <input type="radio" name="qn7" value="False">&nbsp;False</input>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" name="qn7" value="wrong">&nbsp;True</input><br/>
+  <input type="radio" name="qn7" value="correct">&nbsp;False</input>
+  <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <input type="submit" value="Check">
+  <div class="hint"></div>
 </form>
 <br/>
 
@@ -175,7 +177,8 @@ as well as the initial value of the accumulator.
   <input type="text" name="qn8" answer="0" hint="What should be returned if the list is empty?" discuss="">
   <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <input type="submit" value="Check">
-  <div class="hint"></div></form>
+  <div class="hint"></div>
+</form>
 <br/>
 
 (9) Complete the binary function:
@@ -234,11 +237,12 @@ Addition is therefore associative.
 (10) Check all the associative functions below.
 
 <form class="checkboxType">
-<input type="checkbox" name="qn10" value="correct">&nbsp;+<br/>
-<input type="checkbox" name="qn10" value="wrong">&nbsp;-</br/> 
-<input type="checkbox" name="qn10" value="correct">&nbsp;*<br/>
-<input type="checkbox" name="qn10" value="wrong">&nbsp;/</br/> 
-<input type="checkbox" name="qn10" value="wrong">&nbsp;(sum, elt) => sum + 1<br/>
+    <input type="checkbox" name="qn10" value="correct">&nbsp;+<br/>
+    <input type="checkbox" name="qn10" value="wrong">&nbsp;-</br/> 
+    <input type="checkbox" name="qn10" value="correct">&nbsp;*<br/>
+    <input type="checkbox" name="qn10" value="wrong">&nbsp;/</br/> 
+    <input type="checkbox" name="qn10" value="wrong">&nbsp;(sum, elt) => sum + 1<br/>
+    
   <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <input type="submit" value="Check">
   <div class="hint"></div>
@@ -277,15 +281,13 @@ operate with right-associative functions.
 (11) True or False? `count` cannot be implemented with `foldRight`.
 
 <form class="radioType">
-  <input type="radio" name="qn11" value="True">&nbsp;True</input><br/>
-  <input type="radio" name="qn11" value="False">&nbsp;False</input>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" name="qn11" value="wrong" discuss="In fact, it can, so long as we swap the order of arguments in the binary function: <code>def count(list: List[Any]): Int = list.foldRight(0)((_, sum) => sum + 1)</code>">&nbsp;True</input><br/>
+  <input type="radio" name="qn11" value="correct">&nbsp;False</input>
+  <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <input type="submit" value="Check">
+  <div class="hint"></div>
 </form>
 <br/>
-
-In fact, it can:
-`def count(list: List[Any]): Int = list.foldRight(0)((_, sum) => sum + 1)`
 
 <br/>
 
@@ -309,8 +311,9 @@ of the list.
 <form class="radioType">
   <input type="radio" name="qn12" value="wrong">&nbsp;True</input><br/>
   <input type="radio" name="qn12" value="correct">&nbsp;False</input>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <input type="submit" value="Check">
+  <div class="hint"></div>
 </form>
 <br/>
 
@@ -320,8 +323,9 @@ of the list.
 <form class="radioType">
   <input type="radio" name="qn13" value="correct">&nbsp;True</input><br/>
   <input type="radio" name="qn13" value="wrong">&nbsp;False</input>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <input type="submit" value="Check">
+  <div class="hint"></div>
 </form>
 <br/>
 
@@ -362,8 +366,9 @@ as the elements in the list.
 <form class="radioType">
   <input type="radio" name="qn14" value="correct">&nbsp;True</input><br/>
   <input type="radio" name="qn14" value="wrong">&nbsp;False</input>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <input type="submit" value="Check">
+  <div class="hint"></div>
 </form>
 <br/>
 
@@ -371,11 +376,12 @@ as the elements in the list.
 What does `sum(List())` return?
 
 <form class="radioType">
-  <input type="radio" name="qn15" value="wrong">&nbsp;0</input><br/>
+  <input type="radio" name="qn15" value="wrong" discuss="Because <code>reduce</code> uses the first element of the list as its accumulator, the list needs to be at least of length 1.">&nbsp;0</input><br/>
   <input type="radio" name="qn15" value="wrong">&nbsp;1</input><br/>
   <input type="radio" name="qn15" value="correct">&nbsp;Throws an error</input>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <input type="submit" value="Check">
+  <div class="hint"></div>
 </form>
 <br/>
 
