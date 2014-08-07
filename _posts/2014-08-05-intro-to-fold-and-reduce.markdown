@@ -46,7 +46,7 @@ in a logical way.
 
 <form>
   <input type="text" name="product">
-  <input type="submit" value="Check">
+  <span class="result"></span>
 </form>
 <br/>
 
@@ -90,7 +90,7 @@ I'll use `foldLeft` until then.)
 
 <form>
   <input type="text" name="1">
-  <input type="submit" value="Check">
+  <span class="result"></span>
 </form>
 <br/>
 
