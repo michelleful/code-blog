@@ -37,19 +37,32 @@ function gradeCheckbox(form) {
     }
 }
 
+
+function gradeRadio(form) {
+    if (form.children(":checked").attr("value") == "correct") {
+        markCorrect(form.children().first());
+    } else {
+        markWrong(form.children().first());
+    }
+}
+
 // functions for marking an answer right or wrong
 function markCorrect(elt) {
     // mark it with a green checkmark
     elt.siblings(".result").html("&#10003;").addClass("big").css("color","green");
     // put discussion text in hint div (if any)
-    elt.siblings(".hint").html(elt.attr("discuss"));
+    if (elt.attr("discuss")) {
+        elt.siblings(".hint").html(elt.attr("discuss"));
+    }
 };
 
 function markWrong(elt) {
     // mark it with a red cross
     elt.siblings(".result").html("&#x2717;").addClass("big").css("color","red");
     // put hint text in hint div (if any)
-    elt.siblings(".hint").html("Hint: " + elt.attr("hint"))
+    if (elt.attr("hint")) {
+        elt.siblings(".hint").html("Hint: " + elt.attr("hint"))
+    }
 };
 
 $(document).ready(function() {
@@ -60,8 +73,13 @@ $(document).ready(function() {
         return false; // prevent form from submitting
     });
 
-    $("form.checkboxType").submit(function(event) {
+    $("form.checkboxType").submit(function() {
         gradeCheckbox($(this));
-        return false; // prevent form from submitting
+        return false;
+    });
+    
+    $("form.radioType").submit(function() {
+        gradeRadio($(this));
+        return false;
     });
 });
