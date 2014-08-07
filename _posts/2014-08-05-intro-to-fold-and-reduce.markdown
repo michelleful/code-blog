@@ -34,7 +34,7 @@ in a logical way.
 <br/>
 **Quiz 1**
 
-(1) If you apply `fold` to `+`, what array function do you get?
+(1) If you apply `fold` to `+`, what list function do you get?
 
 <form class="textType">
   <input type="text" name="qn1" answer="sum" hint="The answer starts with 's'." discuss="">
@@ -44,7 +44,7 @@ in a logical way.
 </form>
 <br/>
 
-(2) If you apply `fold` to `*`, what array function do you get?
+(2) If you apply `fold` to `*`, what list function do you get?
 
 <form class="textType">
   <input type="text" name="qn2" answer="product" hint="The answer starts with 'p'." discuss="">
@@ -58,7 +58,7 @@ Now let's talk about what `fold` needs in order to be defined:
 
 * the binary function
 * an initial value for the accumulator. Think of this as the zero-value --
-  the value you want returned if the array is empty. Another way to think
+  the value you want returned if the list is empty. Another way to think
   of it is as the identity value of the binary function.
 
 In the case of `sum`, these will be:
@@ -82,7 +82,7 @@ Here's another way of picturing what's going on.
 TODO: diagram
 
 So the accumulator starts at the zero-value, gradually accumulates
-the intermediate values, and is returned when the array is finished.
+the intermediate values, and is returned when the list is finished.
 
 (Confused about `fold` vs `foldLeft`? Don't worry, 
 it will be explained in the third section.
@@ -107,35 +107,34 @@ The complete definition of `product` is:
 (4) What does `product(List())` give us? Check all correct answers.
 
 <form class="checkboxType">
-  <input type="checkbox" name="qn4" value="wrong">&nbsp;0</input><br/>
+  <input type="checkbox" name="qn4" value="wrong" discuss="When the result of fold is applied to an empty list, we just get the accumulator back.">&nbsp;0</input><br/>
   <input type="checkbox" name="qn4" value="correct">&nbsp;1</input><br/>
   <input type="checkbox" name="qn4" value="correct">&nbsp;The initial value of the accumulator</input>
   <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <input type="submit" value="Check">
+  <div class="hint"></div>
 </form>
 <br/>
 
 (5) What does `product(List(2))` give us? Check all correct answers.
 
-<form>
-  <input type="checkbox" name="product-empty-list" value="correct">&nbsp;0</input><br/>
-  <input type="checkbox" name="product-empty-list" value="correct">&nbsp;1</input><br/>
-  <input type="checkbox" name="product-empty-list" value="correct">&nbsp;2</input><br/>
-  <input type="checkbox" name="product-empty-list" value="correct">&nbsp;The initial value of the accumulator</input><br/>
-  <input type="checkbox" name="product-empty-list" value="correct">&nbsp;The initial value of the accumulator * the value of the first element</input>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<form class="checkboxType">
+  <input type="checkbox" name="qn5" value="wrong" discuss="When the result of fold is applied to an list
+of length 1, we get the result of the binary function applied to the
+accumulator and that element.">&nbsp;0</input><br/>
+  <input type="checkbox" name="qn5" value="wrong">&nbsp;1</input><br/>
+  <input type="checkbox" name="qn5" value="correct">&nbsp;2</input><br/>
+  <input type="checkbox" name="qn5" value="wrong">&nbsp;The initial value of the accumulator</input><br/>
+  <input type="checkbox" name="qn5" value="correct">&nbsp;The initial value of the accumulator * the value of the first element</input>
+  <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <input type="submit" value="Check">
+  <div class="hint"></div>
 </form>
 <br/>
 
-When the result of a `fold` function is applied to an empty array,
-we just get the accumulator back. When it is applied to an array
-of length 1, we get the result of the binary function applied to the
-accumulator and that element.
-
 (6) True or False? With `foldLeft`, 
 the initial value of the accumulator must be of the same
-type as the return value of the array function.
+type as the return value of the list function.
 
 <form>
   <input type="radio" name="True" value="True">&nbsp;True</input><br/>
@@ -146,7 +145,7 @@ type as the return value of the array function.
 <br/>
 
 (7) True or False? With `foldLeft`, an accumulator must be of the same type as the elements
-of the array.
+of the list.
 
 <form>
   <input type="radio" name="False" value="True">&nbsp;True</input><br/>
@@ -162,10 +161,10 @@ That last question was a bit tricky, so don't feel bad if you didn't get it
 right. So far, the two examples we've seen have involved binary functions
 that accept two elements of the same type. However, that doesn't need to be
 the case. Let's go through two examples where the accumulator is of a different
-type from the elements of the array (examples from [2]).
+type from the elements of the list (examples from [2]).
 
 The first example is `count`. Using `foldLeft`, we'll write a function that
-returns the length of the array. We'll need to specify the binary function
+returns the length of the list. We'll need to specify the binary function
 as well as the initial value of the accumulator.
 
 **Quiz 3**
@@ -182,7 +181,7 @@ as well as the initial value of the accumulator.
 (9) Complete the binary function:
 
 <form class="textType">
-  (sum, _) => <input type="text" name="qn2" answer="sum + 1" hint="Increment the operator by 1. Put spaces around the operator." discuss="">
+  (sum, elt) => <input type="text" name="qn2" answer="sum + 1" hint="Increment the operator by 1. Put spaces around the operator." discuss="">
   <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <input type="submit" value="Check">
   <div class="hint"></div>
@@ -191,11 +190,10 @@ as well as the initial value of the accumulator.
 
 If you're not familiar with Scala syntax, the expression above
 specifies an anonymous function that accepts two arguments: `sum`, 
-the accumulator, and an unnamed argument `_`. This unnamed argument
-represents an element of the array. The return value is on the right
-hand side of `=>`.
+the accumulator, and the next element of the list `elt`.
+The return value is on the right hand side of `=>`.
 
-The complete `count` function is: `def count(list: List[Any]): Int = list.foldLeft(0)((sum, _) => sum + 1)`.
+The complete `count` function is: `def count(list: List[Any]): Int = list.foldLeft(0)((sum, elt) => sum + 1)`.
 
 <br/>
 
@@ -210,7 +208,7 @@ with a `List` of type `A`, you'll get back a set with elements of type `A`.
 
 First we need the initial accumulator value. That's easy: it should be the empty set.
 Next we need the binary function combining the accumulator (the set built so far)
-and the next element of the array. This is simply set addition, which you see
+and the next element of the list. This is simply set addition, which you see
 on the right.
 
 
@@ -221,8 +219,8 @@ rather than `fold` or `foldRight`. These aren't interchangeable:
 if we try to substitute `foldLeft` in the definition of `count` with
 either of the other alternatives, we get compilation errors.
 
-`def count(list: List[Any]): Int = list.fold(0)((sum,_) => sum + 1)` DOESN'T WORK!
-`def count(list: List[Any]): Int = list.foldRight(0)((sum,_) => sum + 1)` DOESN'T WORK!
+`def count(list: List[Any]): Int = list.fold(0)((sum, elt) => sum + 1)` DOESN'T WORK!
+`def count(list: List[Any]): Int = list.foldRight(0)((sum, elt) => sum + 1)` DOESN'T WORK!
 
 To understand why, we'll need to delve into the concept of *associativity*,
 which basically means: we don't have to worry about bracketing.
@@ -235,13 +233,15 @@ Addition is therefore associative.
 
 (10) Check all the associative functions below.
 
-<form>
+<form class="checkboxType">
 <input type="checkbox" name="correct" value="plus">&nbsp;+<br/>
 <input type="checkbox" name="wrong" value="minus">&nbsp;-</br/> 
 <input type="checkbox" name="correct" value="plus">&nbsp;*<br/>
 <input type="checkbox" name="wrong" value="minus">&nbsp;/</br/> 
-<input type="checkbox" name="wrong" value="plus">&nbsp;(sum,_) => sum + 1<br/>
-<input type="submit" value="Check">
+<input type="checkbox" name="wrong" value="plus">&nbsp;(sum, elt) => sum + 1<br/>
+  <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <input type="submit" value="Check">
+  <div class="hint"></div>
 </form>
 
 <br/>
@@ -304,7 +304,7 @@ of the computations in parallel, and speed up the whole function considerably.
 **Quiz 5**
 
 (11) True or False? With `foldRight`, an accumulator must be of the same type as the elements
-of the array.
+of the list.
 
 <form>
   <input type="radio" name="False" value="True">&nbsp;True</input><br/>
@@ -315,7 +315,7 @@ of the array.
 <br/>
 
 (12) True or False? With `fold`, an accumulator must be of the same type as the elements
-of the array.
+of the list.
 
 <form>
   <input type="radio" name="True" value="True">&nbsp;True</input><br/>
@@ -345,7 +345,7 @@ while `foldLeft` cannot. For more on this, read [anrizal's article.](http://void
 If you come from a non-functional programming background like me, you might never have
 heard of `fold`, and only about `reduce`, made famous by Google's MapReduce paradigm.
 `reduce` is actually a special case of `fold`, in which the initial accumulator value
-is set to be the first (or last) value of the array, and the rest of the array is then
+is set to be the first (or last) value of the list, and the rest of the list is then
 processed accordingly.
 
 `reduceLeft = list.tail.foldLeft(list.head)` [5]
@@ -357,7 +357,7 @@ TODO: animation
 **Quiz 6**
 
 (13) True or False? A function defined with `reduce` must return the same type
-as the elements in the array.
+as the elements in the list.
 
 <form>
   <input type="radio" name="True" value="True">&nbsp;True</input><br/>
