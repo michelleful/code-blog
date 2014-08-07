@@ -9,37 +9,43 @@ if(typeof(String.prototype.trim) === "undefined")
 
 // functions for verifying whether an answer is correct (true) or wrong (false)
 function isTextCorrect(elt) {
-    if (elt.val().trim().toLowerCase() == elt.attr("name")) {
+    if (elt.val().trim().toLowerCase() == elt.attr("answer")) {
         return true
     } else {
         return false
     }
 }
 
+function isCheckboxCorrect(elt) {
+    
+}
+
 // TODO: functions for checkboxes and radio buttons
 
 // functions for marking an answer right or wrong
 function markCorrect(elt) {
-    elt.parent().children(".result").html("&#10003;").addClass("big").css("color","green");
+    // mark it with a green checkmark
+    elt.siblings(".result").html("&#10003;").addClass("big").css("color","green");
+    // put discussion text in hint div
+    elt.siblings(".hint").html(elt.attr("discuss"));
 };
 
 function markWrong(elt) {
-    elt.parent().children(".result").html("&#x2717;").addClass("big").css("color","red");
+    // mark it with a red cross
+    elt.siblings(".result").html("&#x2717;").addClass("big").css("color","red");
+    // put hint text in hint div
+    elt.siblings(".hint").html("Hint: " + elt.attr("hint"))
 };
 
 $(document).ready(function() {
 
-    $("form").submit(function() {
-        return false;
-    })
-    
-    $(":text").blur(function() {
-        if ($(this).val() != "") {
-           if(isTextCorrect($(this))) {
-               markCorrect($(this));
-           } else {
-               markWrong($(this));
-           };
-        };
+    $("form.textType").submit(function() {
+       var answerElt = $(this).children(":text");
+       if(isTextCorrect(answerElt)) {
+           markCorrect(answerElt);
+       } else {
+           markWrong(answerElt);
+       };
+       return false;
     });
 });
