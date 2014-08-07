@@ -93,10 +93,11 @@ I'll use `foldLeft` until then.)
 (3) What should the initial accumulator value be when defining `product`?
 
 <form class="textType">
-  <input type="text" name="qn3" answer="1" hint="n * x = n" discuss="">
+  <input type="text" name="qn3" answer="1" hint="n * x = n">
   <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <input type="submit" value="Check">
-  <div class="hint"></div></form>
+  <div class="hint"></div>
+</form>
 <br/>
 
 The complete definition of `product` is:
@@ -105,11 +106,11 @@ The complete definition of `product` is:
 
 (4) What does `product(List())` give us? Check all correct answers.
 
-<form>
-  <input type="checkbox" name="product-empty-list" value="wrong">&nbsp;0</input><br/>
-  <input type="checkbox" name="product-empty-list" value="correct">&nbsp;1</input><br/>
-  <input type="checkbox" name="product-empty-list" value="correct">&nbsp;The initial value of the accumulator</input>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<form class="checkboxType">
+  <input type="checkbox" name="qn4" value="wrong">&nbsp;0</input><br/>
+  <input type="checkbox" name="qn4" value="correct">&nbsp;1</input><br/>
+  <input type="checkbox" name="qn4" value="correct">&nbsp;The initial value of the accumulator</input>
+  <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <input type="submit" value="Check">
 </form>
 <br/>
