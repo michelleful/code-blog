@@ -20,7 +20,7 @@ function isTextCorrect(elt) {
 
 // functions for marking an answer right or wrong
 function markCorrect(elt) {
-    elt.parent().children(".result").html("&#10004;").addClass("big").css("color","green");
+    elt.parent().children(".result").html("&#10003;").addClass("big").css("color","green");
 };
 
 function markWrong(elt) {
