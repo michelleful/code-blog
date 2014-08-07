@@ -136,9 +136,9 @@ accumulator and that element.">&nbsp;0</input><br/>
 the initial value of the accumulator must be of the same
 type as the return value of the list function.
 
-<form>
-  <input type="radio" name="True" value="True">&nbsp;True</input><br/>
-  <input type="radio" name="True" value="False">&nbsp;False</input>
+<form class="radioType">
+  <input type="radio" name="qn6" value="True">&nbsp;True</input><br/>
+  <input type="radio" name="qn6" value="False">&nbsp;False</input>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="submit" value="Check">
 </form>
@@ -147,9 +147,9 @@ type as the return value of the list function.
 (7) True or False? With `foldLeft`, an accumulator must be of the same type as the elements
 of the list.
 
-<form>
-  <input type="radio" name="False" value="True">&nbsp;True</input><br/>
-  <input type="radio" name="False" value="False">&nbsp;False</input>
+<form class="radioType">
+  <input type="radio" name="qn7" value="True">&nbsp;True</input><br/>
+  <input type="radio" name="qn7" value="False">&nbsp;False</input>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="submit" value="Check">
 </form>
@@ -181,7 +181,7 @@ as well as the initial value of the accumulator.
 (9) Complete the binary function:
 
 <form class="textType">
-  (sum, elt) => <input type="text" name="qn2" answer="sum + 1" hint="Increment the operator by 1. Put spaces around the operator." discuss="">
+  (sum, elt) => <input type="text" name="qn9" answer="sum + 1" hint="Increment the operator by 1. Put spaces around the operator." discuss="">
   <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <input type="submit" value="Check">
   <div class="hint"></div>
@@ -234,11 +234,11 @@ Addition is therefore associative.
 (10) Check all the associative functions below.
 
 <form class="checkboxType">
-<input type="checkbox" name="correct" value="plus">&nbsp;+<br/>
-<input type="checkbox" name="wrong" value="minus">&nbsp;-</br/> 
-<input type="checkbox" name="correct" value="plus">&nbsp;*<br/>
-<input type="checkbox" name="wrong" value="minus">&nbsp;/</br/> 
-<input type="checkbox" name="wrong" value="plus">&nbsp;(sum, elt) => sum + 1<br/>
+<input type="checkbox" name="qn10" value="correct">&nbsp;+<br/>
+<input type="checkbox" name="qn10" value="wrong">&nbsp;-</br/> 
+<input type="checkbox" name="qn10" value="correct">&nbsp;*<br/>
+<input type="checkbox" name="qn10" value="wrong">&nbsp;/</br/> 
+<input type="checkbox" name="qn10" value="wrong">&nbsp;(sum, elt) => sum + 1<br/>
   <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <input type="submit" value="Check">
   <div class="hint"></div>
@@ -276,9 +276,9 @@ operate with right-associative functions.
 
 (11) True or False? `count` cannot be implemented with `foldRight`.
 
-<form>
-  <input type="radio" name="True" value="True">&nbsp;True</input><br/>
-  <input type="radio" name="True" value="False">&nbsp;False</input>
+<form class="radioType">
+  <input type="radio" name="qn11" value="True">&nbsp;True</input><br/>
+  <input type="radio" name="qn11" value="False">&nbsp;False</input>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="submit" value="Check">
 </form>
@@ -301,25 +301,25 @@ There is no difference in result, whichever way it goes.
 This means that instead of processing the elements one by one, we can actually run many
 of the computations in parallel, and speed up the whole function considerably.
 
-**Quiz 5**
+**Quiz 6**
 
-(11) True or False? With `foldRight`, an accumulator must be of the same type as the elements
+(12) True or False? With `foldRight`, an accumulator must be of the same type as the elements
 of the list.
 
-<form>
-  <input type="radio" name="False" value="True">&nbsp;True</input><br/>
-  <input type="radio" name="False" value="False">&nbsp;False</input>
+<form class="radioType">
+  <input type="radio" name="qn12" value="wrong">&nbsp;True</input><br/>
+  <input type="radio" name="qn12" value="correct">&nbsp;False</input>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="submit" value="Check">
 </form>
 <br/>
 
-(12) True or False? With `fold`, an accumulator must be of the same type as the elements
+(13) True or False? With `fold`, an accumulator must be of the same type as the elements
 of the list.
 
-<form>
-  <input type="radio" name="True" value="True">&nbsp;True</input><br/>
-  <input type="radio" name="True" value="False">&nbsp;False</input>
+<form class="radioType">
+  <input type="radio" name="qn13" value="correct">&nbsp;True</input><br/>
+  <input type="radio" name="qn13" value="wrong">&nbsp;False</input>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="submit" value="Check">
 </form>
@@ -354,26 +354,26 @@ The following animation gives an example.
 
 TODO: animation
 
-**Quiz 6**
+**Quiz 7**
 
-(13) True or False? A function defined with `reduce` must return the same type
+(14) True or False? A function defined with `reduce` must return the same type
 as the elements in the list.
 
-<form>
-  <input type="radio" name="True" value="True">&nbsp;True</input><br/>
-  <input type="radio" name="True" value="False">&nbsp;False</input>
+<form class="radioType">
+  <input type="radio" name="qn14" value="correct">&nbsp;True</input><br/>
+  <input type="radio" name="qn14" value="wrong">&nbsp;False</input>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="submit" value="Check">
 </form>
 <br/>
 
-(14) Suppose we implement `sum` as: `def sum3(list: List[Int]): Int = list.reduce((r,c) => r+c)`.
+(15) Suppose we implement `sum` as: `def sum3(list: List[Int]): Int = list.reduce((r,c) => r+c)`.
 What does `sum(List())` return?
 
-<form>
-  <input type="radio" name="error" value="0">&nbsp;0</input><br/>
-  <input type="radio" name="error" value="1">&nbsp;1</input><br/>
-  <input type="radio" name="error" value="error">&nbsp;Throws an error</input>
+<form class="radioType">
+  <input type="radio" name="qn15" value="wrong">&nbsp;0</input><br/>
+  <input type="radio" name="qn15" value="wrong">&nbsp;1</input><br/>
+  <input type="radio" name="qn15" value="correct">&nbsp;Throws an error</input>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="submit" value="Check">
 </form>
