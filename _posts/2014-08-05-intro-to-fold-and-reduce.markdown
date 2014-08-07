@@ -24,11 +24,11 @@ language.
 Suppose you have a function that takes two arguments and combines them to
 give a result. You know lots of functions like this -- addition `+` is one,
 multiplication `*` is another. How can you generalise this function to handle
-more than two arguments, specifically, a whole array of elements? [1]
+more than two arguments, specifically, a whole list of elements? [1]
 
 This is where `fold` comes in. `fold` is a higher-order function
 that takes a binary function and an accumulator (we'll get to what this means
-soon), and returns a function capable of processing a whole array of elements
+soon), and returns a function capable of processing a whole list of elements
 in a logical way.
 
 <br/>
@@ -37,16 +37,20 @@ in a logical way.
 (1) If you apply `fold` to `+`, what array function do you get?
 
 <form class="textType">
-  <input type="text" name="sum">
-  <span class="result"></span>
+  <input type="text" name="qn1" answer="sum" hint="The answer starts with 's'." discuss="">
+  <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <input type="submit" value="Check">
+  <div class="hint"></div>
 </form>
 <br/>
 
 (2) If you apply `fold` to `*`, what array function do you get?
 
-<form>
-  <input type="text" name="product">
-  <span class="result"></span>
+<form class="textType">
+  <input type="text" name="qn2" answer="product" hint="The answer starts with 'p'." discuss="">
+  <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <input type="submit" value="Check">
+  <div class="hint"></div>
 </form>
 <br/>
 
@@ -88,10 +92,11 @@ I'll use `foldLeft` until then.)
 
 (3) What should the initial accumulator value be when defining `product`?
 
-<form>
-  <input type="text" name="1">
-  <span class="result"></span>
-</form>
+<form class="textType">
+  <input type="text" name="qn3" answer="1" hint="n * x = n" discuss="">
+  <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <input type="submit" value="Check">
+  <div class="hint"></div></form>
 <br/>
 
 The complete definition of `product` is:
@@ -166,17 +171,20 @@ as well as the initial value of the accumulator.
 
 (8) What should the initial accumulator value of the `count` function be?
 
-<form>
-  <input type="text" name="0">
+<form class="textType">
+  <input type="text" name="qn8" answer="0" hint="What should be returned if the list is empty?" discuss="">
+  <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <input type="submit" value="Check">
-</form>
+  <div class="hint"></div></form>
 <br/>
 
 (9) Complete the binary function:
 
-`(sum, _) => ` <form>
-  <input type="text" name="sum + 1">
+<form class="textType">
+  (sum, _) => <input type="text" name="qn2" answer="sum + 1" hint="Increment the operator by 1. Put spaces around the operator." discuss="">
+  <span class="result">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <input type="submit" value="Check">
+  <div class="hint"></div>
 </form>
 <br/>
 
@@ -186,9 +194,7 @@ the accumulator, and an unnamed argument `_`. This unnamed argument
 represents an element of the array. The return value is on the right
 hand side of `=>`.
 
-The complete `count` function is:
-
-`def count(list: List[Any]): Int = list.foldLeft(0)((sum, _) => sum + 1)`
+The complete `count` function is: `def count(list: List[Any]): Int = list.foldLeft(0)((sum, _) => sum + 1)`.
 
 <br/>
 
