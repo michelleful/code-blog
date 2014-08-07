@@ -20,17 +20,19 @@ function isTextCorrect(elt) {
 
 // functions for marking an answer right or wrong
 function markCorrect(elt) {
-    console.log("Correct!")
-    console.log($(this).parent().children(".result"))
-    $(this).parent().children(".result").text("Correct!")
+    elt.parent().children(".result").html("&#10004;").addClass("big").css("color","green");
 };
 
 function markWrong(elt) {
-    $(this).parent().children(".result").text("Wrong!")
+    elt.parent().children(".result").html("&#x2717;").addClass("big").css("color","red");
 };
 
 $(document).ready(function() {
 
+    $("form").submit(function() {
+        return false;
+    })
+    
     $(":text").blur(function() {
         if ($(this).val() != "") {
            if(isTextCorrect($(this))) {
