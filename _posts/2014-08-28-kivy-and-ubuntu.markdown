@@ -12,7 +12,7 @@ tags:
 [this Kivy crash course](http://inclem.net/pages/kivy-crash-course/).
 And this morning, I finally managed to get my very first Kivy app
 from my 64-bit Ubuntu 14.04 installation to
-my (newly-won) Kindle Fire, an Android device \*dances happy dance\*.
+my (newly-won, at a tech meetup) Kindle Fire, an Android device \*dances happy dance\*.
 There were quite a few installation hoops to jump through, so I'm
 writing them up here.
 
@@ -47,7 +47,7 @@ to `main.py`. This is the first thing launched when your app is opened.
 
 ### Getting the .apk onto the Android device
 
-The first step is to get Ubuntu to recognise the Android device when it's plugged in!
+The next step is to get Ubuntu to recognise your Android device when it's plugged in!
 You may be lucky and have it work out of the box, but I wasn't that fortunate.
 Luckily, there's a quick fix, which is to install the MTPfs package.
 
