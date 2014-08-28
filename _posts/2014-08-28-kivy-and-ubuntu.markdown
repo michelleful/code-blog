@@ -31,6 +31,8 @@ sudo apt-get update
 sudo apt-get install -y build-essential ccache git zlib1g-dev python2.7 python2.7-dev libncurses5:i386 libstdc++6:i386 zlib1g:i386 openjdk-7-jdk unzip
 {% endhighlight %}
 
+Then `pip install buildozer`.
+
 ### Compiling to .apk
 
 This step is quite easy. First run `buildozer init` and modify whatever
@@ -57,7 +59,8 @@ sudo apt-get install mtpfs
 
 Now, when you connect the Android device via the USB cable, the Android
 filesystem should appear on Ubuntu. Just copy the `.apk` file created
-in the previous step to somewhere on the device.
+in the previous step, which will be in the `bin/` directory, 
+to somewhere on the device.
 
 Lastly, open up the Easy Installer app on your Android device (I installed
 it from the Kindle App Store, for free). It will locate all `.apk` files
