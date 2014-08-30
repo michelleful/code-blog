@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  How to get a Kivy app from Ubuntu 14.04 to your Android app
+title:  How to get a Kivy app from Ubuntu 14.04 onto your Android device
 tags: 
 - howto
 - kivy
