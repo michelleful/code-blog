@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Twide and Twejudice at NaNoWriMo 2014
+title:  Twide and Twejudice at NaNoGenMo 2014
 subtitle: (Not the way I expected to get into Verge)
 author: Michelle Fullwood
 header-img: "img/post-bg-06.jpg"
