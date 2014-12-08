@@ -1,4 +1,15 @@
-name: Michelle Fullwood's Code Blog
-markdown: redcarpet
-pygments: true
-baseurl: /code-blog
+# Site settings
+title: Michelle Fullwood
+email: michelle.fullwood@gmail.com
+description: "Explorations in language technology, Python, and other technical diversions"
+baseurl: "/code-blog"
+url: "http://michelleful.github.io/code-blog"
+twitter_username: michelleful
+github_username:  michelleful
+
+# Build settings
+markdown: kramdown
+highlighter: pygments
+permalink: pretty
+paginate: 5
+exclude: ["node_modules"]

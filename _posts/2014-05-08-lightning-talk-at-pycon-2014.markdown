@@ -1,6 +1,9 @@
 ---
 layout: post
 title:  What I learned giving a lightning talk at PyCon
+subtitle: Overcoming doubts, and giving thanks
+author: Michelle Fullwood
+header-img: "img/MichelleFullwood_photoby_RubenOrduz_evenmoretopcropped_burned.jpg"
 tags: 
 - arabic
 - language-learning
@@ -13,9 +16,9 @@ So I went to PyCon 2014 in Montreal and it rocked! I had no idea I would enjoy m
 
 Now, when I started this blog, I promised that I'd write about what I learned from PyCon, but honestly, in the case of the talks I attended, you'd be better off <a href="http://pyvideo.org/category/50/pycon-us-2014">watching the videos yourself</a>. The one thing I can tell you about that's unique to my experience is about what I learned by giving a talk at PyCon.
 
-Yep, I gave a lightning talk at PyCon 2014, about the <a href="http://fuzzyarabic.herokuapp.com">Fuzzy Arabic Dictionary</a>! I'm still pretty surprised about it myself, but there is documentary evidence that it did happen: <a href="https://www.youtube.com/watch?v=xcXheAWy7cU#t=1547">video</a>, <a href="{{ site.baseurl }}/assets/images/201404/michelleful_pycon2014_lightningtalk.pdf">slides</a>, and this photo by <a href="http://twitter.com/WallOfFire">Ruben Orduz</a>.
+Yep, I gave a lightning talk at PyCon 2014, about the <a href="http://fuzzyarabic.herokuapp.com">Fuzzy Arabic Dictionary</a>! I'm still pretty surprised about it myself, but there is documentary evidence that it did happen: <a href="https://www.youtube.com/watch?v=xcXheAWy7cU#t=1547">video</a>, <a href="{{ site.baseurl }}/assets/images/201404/michelleful_pycon2014_lightningtalk.pdf">slides</a>, and the photo in the header, taken by <a href="http://twitter.com/WallOfFire">Ruben Orduz</a>.
 
-<a href="https://www.dropbox.com/sh/vuqkfd3fnyetahw/swsOTBUVRJ#lh:null-DSCF1499.jpg"><img width="100%" src="{{ site.baseurl }}/assets/images/201404/michelleful_pycon_by_ruben_orduz.jpg"></a>
+<!--<a href="https://www.dropbox.com/sh/vuqkfd3fnyetahw/swsOTBUVRJ#lh:null-DSCF1499.jpg"><img width="100%" src="{{ site.baseurl }}/assets/images/201404/michelleful_pycon_by_ruben_orduz.jpg"></a>-->
 
 Here's what I learned along the way.
 

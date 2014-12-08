@@ -1,6 +1,9 @@
 ---
 layout: post
 title:  24-hour project&#58; the Stressifier
+subtitle: A tool to help English learners stress words correctly
+author: Michelle Fullwood
+header-img: "img/post-bg-04.jpg"
 tags: 
 - english
 - stress
@@ -63,8 +66,8 @@ via several applications of the EM algorithm, then outputs the best alignment be
 For example, "afterthought" is aligned as follows:
 
 <table class="topspace bottomspace">
-<tr><td>A</td><td>F</td><td>T</td><td>E:R</td><td>T:H</td><td>O</td><td>U:G</td><td>H:T</td></tr>
-<tr><td>AE</td><td>F</td><td>T</td><td>ER</td><td>TH</td><td>AA</td><td>_</td><td>T</td></tr>
+<tr><td>&nbsp;&nbsp;A&nbsp;&nbsp;</td><td>&nbsp;&nbsp;F&nbsp;&nbsp;</td><td>&nbsp;&nbsp;T&nbsp;&nbsp;</td><td>&nbsp;&nbsp;E:R&nbsp;&nbsp;</td><td>&nbsp;&nbsp;T:H&nbsp;&nbsp;</td><td>&nbsp;&nbsp;O&nbsp;&nbsp;</td><td>&nbsp;&nbsp;U:G&nbsp;&nbsp;</td><td>&nbsp;&nbsp;H:T&nbsp;&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;AE&nbsp;&nbsp;</td><td>&nbsp;&nbsp;F&nbsp;&nbsp;</td><td>&nbsp;&nbsp;T&nbsp;&nbsp;</td><td>&nbsp;&nbsp;ER&nbsp;&nbsp;</td><td>&nbsp;&nbsp;TH&nbsp;&nbsp;</td><td>&nbsp;&nbsp;AA&nbsp;&nbsp;</td><td>&nbsp;&nbsp;_&nbsp;&nbsp;</td><td>&nbsp;&nbsp;T&nbsp;&nbsp;</td></tr>
 </table>
 
 One might quibble about the exact grapheme-to-phoneme alignment, but on the syllable level, it's pretty decent.
@@ -87,10 +90,10 @@ Another issue is whether syllables are necessarily the best unit to use as the b
 Which looks better to you, the first or second column?
 
 <table class="bottomspace">
-  <tr><td>par<b>ti</b>cular</td><td>par<b>tic</b>ular</td></tr>
-  <tr><td><b>tea</b>ching</td><td><b>teach</b>ing</td></tr>
-  <tr><td><b>di</b>fficult</td><td><b>diff</b>icult</td></tr>
-  <tr><td><b>ho</b>spital&#42;</td><td><b>hos</b>pital</td></tr>
+  <tr><td>par<b>ti</b>cular</td><td>&nbsp;&nbsp;par<b>tic</b>ular</td></tr>
+  <tr><td><b>tea</b>ching</td><td><b>&nbsp;&nbsp;teach</b>ing</td></tr>
+  <tr><td><b>di</b>fficult</td><td><b>&nbsp;&nbsp;diff</b>icult</td></tr>
+  <tr><td><b>ho</b>spital&#42;</td><td><b>&nbsp;&nbsp;hos</b>pital</td></tr>
 </table>
 
 The first column follows the standard rules of syllabification, in particular

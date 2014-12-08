@@ -1,6 +1,9 @@
 ---
 layout: post
-title:  Setting up a Jekyll blog on Github Pages
+title:  "Setting up a Jekyll blog on Github Pages"
+subtitle: "A comprehensive manual"
+author: "Michelle Fullwood"
+header-img: "img/post-bg-01.jpg"
 tags: 
 - jekyll 
 - howto 
@@ -110,6 +113,7 @@ Now run:
 
 {% highlight bash %}
 sudo gem install bundler
+bundler install
 {% endhighlight %}
 
 If everything goes well, you'll get this message: 

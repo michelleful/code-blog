@@ -1,6 +1,9 @@
 ---
 layout: post
 title:  Getting a Kivy app from Ubuntu 14.04 onto your Android device
+subtitle: A guide to the hoops you have to jump through
+author: Michelle Fullwood
+header-img: "img/post-bg-05.jpg"
 tags: 
 - howto
 - kivy
@@ -12,7 +15,7 @@ tags:
 [this Kivy crash course](http://inclem.net/pages/kivy-crash-course/).
 And this morning, I finally managed to get my very first Kivy app
 from my 64-bit Ubuntu 14.04 installation to
-my (newly-won, at a tech meetup) Kindle Fire, an Android device \*dances happy dance\*.
+my (newly-won, at a tech meetup) Kindle Fire, an Android device \*<em>dances happy dance</em>\*.
 There were quite a few installation hoops to jump through, so I'm
 writing them up here.
 
@@ -69,5 +72,5 @@ Select the one(s) you want to install and click Install. You may need
 to modify a setting: `Settings > Applications > Apps from Unknown Sources` should be `On`.
 
 That's it! Your Kivy app is installed just like any other app. You can hold
-down the icon and `Remove from device` to remove it when you're done playing with it.
+down the icon and select `Remove from device` to remove it when you're done playing with it.
 Have fun!
