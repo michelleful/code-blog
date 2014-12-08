@@ -4,7 +4,6 @@ title:  Getting a Kivy app from Ubuntu 14.04 onto your Android device
 subtitle: A guide to the hoops you have to jump through
 author: Michelle Fullwood
 header-img: "img/post-bg-05.jpg"
-header-img-credit: "Michelle Fullwood"
 tags: 
 - howto
 - kivy

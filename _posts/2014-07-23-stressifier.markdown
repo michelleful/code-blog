@@ -4,7 +4,6 @@ title:  24-hour project&#58; the Stressifier
 subtitle: A tool to help English learners stress words correctly
 author: Michelle Fullwood
 header-img: "img/post-bg-03.jpg"
-header-img-credit: "Michelle Fullwood"
 tags: 
 - english
 - stress

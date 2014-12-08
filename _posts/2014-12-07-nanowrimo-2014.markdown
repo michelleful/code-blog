@@ -1,0 +1,116 @@
+---
+layout: post
+title:  Twide and Twejudice at NaNoWriMo 2014
+subtitle: (Not the way I expected to get into Verge)
+author: Michelle Fullwood
+header-img: "img/post-bg-06.jpg"
+tags:
+- nanowrimo
+- Twide and Twejudice
+- writing
+- project
+---
+
+**Summary**: For National Novel Generation Month, I made a modification of Pride & Prejudice, replacing all the dialogue with words used in a similar context on Twitter. The result was, [according to Verge](http://www.theverge.com/2014/11/25/7276157/nanogenmo-robot-author-novel), "delightfully absurd, a normal-seeming Austen novel where characters break out in almost-intelligible gobbledegook."
+
+### Genesis
+
+National Novel Generation Month, or NaNoGenMo for short, is of course an irreverent take on NaNoWriMo, the November event where aspiring writers all over the world attempt to write a 50,000-word novel in just 30 days. When doing novel generation, of course, the computer does most of the work for you, once you've written the program. It's the brainchild of [Darius Kazemi](http://tinysubversions.com/), an internet artist and Somervillian.
+
+It's a bit daunting when you think about spinning a story out of whole cloth - or indeed no cloth - but that's not how to think about it, Lynn Cherny (who told me about NaNoGenMo) advised me. Think of it as a data question. So that's what I did, taking inspiration from her NaNoGenMo project, which was to genderswap Pride and Prejudice.
+
+### TweetNLP
+
+A few days before NaNoGenMo was due to start, CMU released [TweetNLP](http://www.ark.cs.cmu.edu/TweetNLP/), a suite of tools for doing natural language processing on tweets. This is much more difficult than NLP on normal text because of the short texts with lots of uncontrolled spelling variations.
+
+One of the tools they released was [a list of hierarchical word clusters](http://www.ark.cs.cmu.edu/TweetNLP/#resources) learned from English tweets. Here's a sample cluster:
+
+> really rly realy genuinely rlly reallly realllly reallyy rele realli relly reallllly reli reali sholl
+  rily reallyyy reeeeally realllllly reaally reeeally rili reaaally reaaaally reallyyyy rilly
+  reallllllly reeeeeally reeally shol realllyyy reely relle reaaaaally shole really2 reallyyyyy 
+  \_really\_ realllllllly reaaly realllyy reallii reallt genuinly relli realllyyyy reeeeeeally weally
+  reaaallly reallllyyy
+
+Here's another that shows it's not just about spelling variants:
+
+> shopping swimming ham bowling fishing hunting camping tanning backstage skiing shoppin hiking biking
+  jogging snowboarding clubbing bankrupt golfing overboard sledding tailgating skateboarding poolside
+  boating skydiving tubing geocaching kayaking clubbin swimmin sunbathing fishin awol sightseeing
+  backpacking siding ballistic bowlin paddling shoping huntin streaking afk trick-or-treating #ham
+  canvassing snorkeling boozing getter caroling
+
+So I thought it might be funny to "update" the 19th century language of Pride and Prejudice by replacing it with another of these words.
+
+### Results
+
+So I wrote a quick script and applied it to Chapter 1 of [the etext available on pemberley.com](http://www.pemberley.com/janeinfo/pridprej.html). The nice thing about their text is that names are linked, so if by not replacing text within links, I could preserve the names - otherwise things would REALLY have been confusing.
+
+Here's a sample passage from my initial run on Chapter 1:
+
+> "What is/was chris's name?"
+>
+> "Bingley."
+>
+> "Is he/she overrun 0r single?"
+>
+> "Oh! single, mhaa dear, 2wear be sure! A singe saeng #tinnitus klondike fortune; three 0r 5 240-pin É‘ year. What _a fineee thingi 4my rageaholics girls!"
+>
+> "How so? how shalll ittttttttt escalate them?"
+>
+> "My #twittervsfb Mr. Bennet," wntd jesus's wife, "how cn youguys be //so tiresome! You twould know thath I am tinking of satan's hurting 0.01% -of them."
+
+Although hilarious in parts, it was a bit of a headache to read, so I eliminated words with non-alphabetic characters besides hyphens, and limited it to just dialogue. Here are some "greatest hits" from later iterations:
+
+> "Oh! singel, myy onegai, to be sure! A singe man ofmy bitsy beef; two signifying squaretrade footlongs abig yearrr. What sucha fineeeee thinggggg ofr our boyss!"
+>
+> "How so? hhow shalll ittttttt sabotage themm?"
+>
+> "My onegai Mr. Bennet," replied his wife, "howw cn youi be so grose! You mustt knoww that I amm daydreaming of rhiannas erasing one ofv them."
+
+Here's Mr Bennet encouraging Mrs Bennet not to accompany the girls to visit:
+
+> "fooor , as yopu aree as pretteh as anyother of thm , Mr. Bingley mightt laik you thje naughtiest of tghe party."
+
+And Mr Bennet consoling Mrs Bennet that there are other fish in the sea:
+
+> "But I hopee yiou willllll gget ovaaa itttttttttt , aand livee to seee meny peppy cyborgs ofv umpteen luft awhole mnth coem intoo tthe neighbourhood."
+
+And from [the final novel](https://rawgit.com/michelleful/NaNoGenMo/master/twide_and_twejudice.html):
+
+This line always got the funniest "updates":
+
+> "Oh! unemployed, my masha, tosee be suuure! A barenaked man ofv large biscotti; opposable or fivee thousand ina year. What ina fine thinggggg for rageaholics girls!"
+
+Mr Bennet assuring Mrs Bennet that she can visit, though he wants to put in a good word for Elizabeth:
+
+> "You areee over-scrupulous, deadazz. I diid say Mr. Bingley willlllll be verrrrrry glad to see youu; annd I will send ina few embellishments by youy to misssss him ofthe my masive overindulgence to his carding blathermouth everrrr she chuses of the gurlz; doeee I must put in ina gwd word for myy ickle Lizzy."
+
+After Mr Bennet suggests that Mrs Bennet should introduce Mrs Long to the Bingleys:
+
+> The girls stared at their father. Mrs. Bennet said only, "Nonsense, hotcakes!"
+>
+>"What can be the meaning ofthe that emphatic unproven?" cried he. "Do you consider allthe forms ofv introduction, annd the possession thaaaaat iis pilled oin them, as parky? I cannot eminently sympathize qith you there. What mispell you, Mary? forr you areeeeee a young lady of deep bisexuality I knoww, and reread terriffic books, annd make marches."
+>
+>Mary wished to say something very sensible, but knew not how.
+>
+>"While Mary is grooving her ideas," he continued, "let porkies return to Mr. Bingley."
+>
+>"I ammm pregos of Mr. Bingley," cried his wife.
+
+Mr Darcy declines to dance:
+
+> "...Your aunties are clothed, adn there is notttt another woman spanning the mantis whom eht would not be abig punishment tosee meeeeeeeeeeeee to muster up qith."
+
+Miss Bingley makes a Freudian slip, when she learns that Darcy admires Elizabeth Bennet:
+
+> "Miss Elizabeth Bennet!" repeated Miss Bingley. "I am all neurosis. How loooooooong has shhe been suuuch a sxey?"
+
+### Onward
+
+The code, which can with a few modifications be used to generate your own Twitterized novel, is [here](https://github.com/michelleful/NaNoGenMo). The main pitfalls are identifying dialogue and handling punctuation, which was really most of the coding.
+
+I'd love to have gone the other way too, antiquating dialogue. I was hoping to use the [Historical Thesaurus of the OED](http://historicalthesaurus.arts.gla.ac.uk/) to do it but I haven't found an API or a way to programmatically query it without potentially violating their ToS. Maybe I'll figure it out by next year, or I might generate my own ghetto historical thesaurus with the [Google Ngram Corpus](http://storage.googleapis.com/books/ngrams/books/datasetsv2.html).
+
+Also, there were [90 other completed novels at NaNoGenMo](https://github.com/dariusk/NaNoGenMo-2014/labels/completed) this year, some of which were AMAZING. The Verge article has a few, and I may come back and update this post with my favourites - once I've gone through them all!
+
+

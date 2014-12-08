@@ -4,7 +4,6 @@ title:  Adding third party comments to a Jekyll blog (on Github Pages)
 subtitle: Jekyll doesn't come with comments by default, but it's easy to add them.
 author: "Michelle Fullwood"
 header-img: "img/post-bg-01.jpg"
-header-img-credit: "Michelle Fullwood"
 tags: 
 - jekyll 
 - howto 
