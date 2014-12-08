@@ -4,6 +4,7 @@ title:  Introducing the Fuzzy Arabic Dictionary
 subtitle: Look up Arabic words without knowing how to spell
 author: Michelle Fullwood
 header-img: "img/post-bg-02.jpg"
+header-img-credit: "Michelle Fullwood"
 tags: 
 - arabic
 - language-learning

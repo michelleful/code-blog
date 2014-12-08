@@ -4,6 +4,7 @@ title:  "Setting up a Jekyll blog on Github Pages"
 subtitle: "A comprehensive manual"
 author: "Michelle Fullwood"
 header-img: "img/post-bg-01.jpg"
+header-img-credit: "Michelle Fullwood"
 tags: 
 - jekyll 
 - howto 

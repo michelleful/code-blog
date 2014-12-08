@@ -4,6 +4,7 @@ title:  What I learned giving a lightning talk at PyCon
 subtitle: Overcoming doubts, and giving thanks
 author: Michelle Fullwood
 header-img: "img/MichelleFullwood_photoby_RubenOrduz_evenmoretopcropped_burned.jpg"
+header-img-credit: "Ruben Orduz"
 tags: 
 - arabic
 - language-learning
