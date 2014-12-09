@@ -11,13 +11,13 @@ tags:
 - project
 ---
 
-**Summary**: For National Novel Generation Month, I made a modification of Pride & Prejudice, replacing all the dialogue with words used in a similar context on Twitter. The result was, [according to Verge](http://www.theverge.com/2014/11/25/7276157/nanogenmo-robot-author-novel), "delightfully absurd, a normal-seeming Austen novel where characters break out in almost-intelligible gobbledegook."
+**Summary**: For National Novel Generation Month, I made a modification of *Pride & Prejudice*, replacing all the dialogue with words used in a similar context on Twitter. The result was, [according to Verge](http://www.theverge.com/2014/11/25/7276157/nanogenmo-robot-author-novel), "delightfully absurd, a normal-seeming Austen novel where characters break out in almost-intelligible gobbledegook."
 
 ### Genesis
 
 National Novel Generation Month, or NaNoGenMo for short, is of course an irreverent take on NaNoWriMo, the November event where aspiring writers all over the world attempt to write a 50,000-word novel in just 30 days. When doing novel generation, of course, the computer does most of the work for you, once you've written the program. It's the brainchild of [Darius Kazemi](http://tinysubversions.com/), an internet artist and Somervillian.
 
-It's a bit daunting when you think about spinning a story out of whole cloth - or indeed no cloth - but that's not how to think about it, Lynn Cherny (who told me about NaNoGenMo) advised me. Think of it as a data question. So that's what I did, taking inspiration from her NaNoGenMo project, which was to genderswap Pride and Prejudice.
+It's a bit daunting when you think about spinning a story out of whole cloth - or indeed no cloth - but that's not how to think about it, Lynn Cherny (who told me about NaNoGenMo) advised me. Think of it as a data question instead. So that's what I did, taking inspiration from her NaNoGenMo project, about which more below.
 
 ### TweetNLP
 
@@ -39,7 +39,7 @@ Here's another that shows it's not just about spelling variants:
   backpacking siding ballistic bowlin paddling shoping huntin streaking afk trick-or-treating #ham
   canvassing snorkeling boozing getter caroling
 
-So I thought it might be funny to "update" the 19th century language of Pride and Prejudice by replacing it with another of these words.
+So I thought it might be funny to "update" the 19th century language of *Pride and Prejudice* by replacing it with another of these words.
 
 ### Results
 
@@ -105,12 +105,26 @@ Miss Bingley makes a Freudian slip, when she learns that Darcy admires Elizabeth
 
 > "Miss Elizabeth Bennet!" repeated Miss Bingley. "I am all neurosis. How loooooooong has shhe been suuuch a sxey?"
 
-### Onward
+### Onward and outward
 
-The code, which can with a few modifications be used to generate your own Twitterized novel, is [here](https://github.com/michelleful/NaNoGenMo). The main pitfalls are identifying dialogue and handling punctuation, which was really most of the coding.
+The code, which can with a few modifications be used to generate your own Twitterized novel, is [here](https://github.com/michelleful/NaNoGenMo) - though the main idea is so simple that you're probably better off re-implementing it yourself. The main pitfalls are identifying dialogue and handling punctuation, which was really most of the coding.
 
-I'd love to have gone the other way too, antiquating dialogue. I was hoping to use the [Historical Thesaurus of the OED](http://historicalthesaurus.arts.gla.ac.uk/) to do it but I haven't found an API or a way to programmatically query it without potentially violating their ToS. Maybe I'll figure it out by next year, or I might generate my own ghetto historical thesaurus with the [Google Ngram Corpus](http://storage.googleapis.com/books/ngrams/books/datasetsv2.html).
+I'd love to have gone the other way too, antiquating dialogue. I was hoping to use the [Historical Thesaurus of the OED](http://historicalthesaurus.arts.gla.ac.uk/) to do it but I haven't found an API or a way to programmatically query it without potentially violating their ToS (if you know of one please tell me!). Maybe I'll figure it out by next year, otherwise I may generate my own hacky historical thesaurus with the [Google Ngram Corpus](http://storage.googleapis.com/books/ngrams/books/datasetsv2.html).
 
-Also, there were [90 other completed novels at NaNoGenMo](https://github.com/dariusk/NaNoGenMo-2014/labels/completed) this year, some of which were AMAZING. The Verge article has a few, and I may come back and update this post with my favourites - once I've gone through them all!
+Also, there were [90 other completed novels at NaNoGenMo](https://github.com/dariusk/NaNoGenMo-2014/labels/completed) this year, some of which were AMAZING. These are some of the ones I enjoyed, not in any way a comprehensive list:
 
+* [The Seeker](https://github.com/dariusk/NaNoGenMo-2014/issues/146) by [thricedotted](https://github.com/thricedotted) is the inner narrative of a computer as it learns and dreams about the human world. Surprisingly profound.
 
+* [Pride and Prejudice and Word Vectors](https://github.com/dariusk/NaNoGenMo-2014/issues/114) by [arnicas](https://github.com/arnicas) is Lynn Cherny's novel, which used word2vec to replace nouns with their nearest neighbour - which often turns out to be the opposite gendered word, so there's an added genderswap effect. Wonderful dataviz beside the actual novel.
+
+* [Swann's Way Through The Night Land](https://github.com/dariusk/NaNoGenMo-2014/issues/91) by [VincentToups](Swann's Way Through The Night Land) also used word2vec, this time to substitute sentences in *The Nightland* by William Hope Hodgson with their nearest sentences in *Swann's Way* by Proust, so that the structure of the novel is the former but the content is from the latter.
+
+* [Doby Mick; or, the excessively-Spoonerized Whale](https://github.com/dariusk/NaNoGenMo-2014/issues/110) by [cpressey](https://github.com/cpressey) is a wonderfully-executed spoonerization of *Moby Dick*, with onsets swapped between words.
+
+* [NaNoWriMo, the Novel](https://github.com/dariusk/NaNoGenMo-2014/issues/99) by [moonmilk](https://github.com/moonmilk) is chronologically culled from tweets by people participating in NaNoWriMo, documenting their struggles as they progress towards 50K words. You can really sense the frustrations of a writer in this one!
+
+* [Seraphs](https://github.com/dariusk/NaNoGenMo-2014/issues/45) by [lizadaly](https://github.com/lizadaly) generates a fake Voynich manuscript, complete with illustrations from Flickr/Internet Archive Commons. Easily the most beautiful entry!
+
+* [Generated Detective: A NaNoGenMo Comic](https://github.com/dariusk/NaNoGenMo-2014/issues/70) by [atduskgreg](https://github.com/atduskgreg) generates a series of captions from the text of old detective novels, then pulls images from Flickr Commons to illustrate them, putting them through OpenCV to make them look hand-drawn. The result is really impressive and makes surprising sense a lot of the time. The choice of illustrations is also sometimes hilarious.
+
+Thanks to Darius for organising NaNoGenMo, and Lynn for encouraging me to join in! I'll be back next year!
