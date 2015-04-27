@@ -109,13 +109,17 @@ using GeoPandas' own plotting feature, which I then turned into a webmap using a
 
 ### The posts
 
-So here's the rough plan for the blogposts (if there's a link it's up; if not, please be patient!)
+So here's the rough plan for the blogposts (if there's a link it's up):
 
-* Getting data from OpenStreetMap and opening it in GeoPandas
-* Manipulating geodata in GeoPandas
-* Building a basic classifier in scikit-learn
-* How to efficiently add features to a classifier using Pipelines
-* Making the map in multiple ways
-* What we've learned about Singapore roadnames!
+<ul>
+  <li style="text-decoration: underline;"><a href="{{ site.baseurl }}/2015/04/27/osm-data/">Getting data from OpenStreetMap and opening it in GeoPandas</a></li>
+  <li>Manipulating geodata with GeoPandas</li>
+  <li>Fuzzily cleaning data with fuzzywuzzy</li>
+  <li>Building a baseline classifier in scikit-learn</li>
+  <li>How to efficiently add features to a classifier using Pipelines</li>
+  <li>Making the map in multiple ways</li>
+  <li>What we've learned about Singapore roadnames!</li>
+</ul>
+
 
 Feel free to ask me any questions along this journey.
