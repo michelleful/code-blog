@@ -113,7 +113,7 @@ So here's the rough plan for the blogposts (if there's a link it's up):
 
 <ul>
   <li style="text-decoration: underline;"><a href="{{ site.baseurl }}/2015/04/27/osm-data/">Getting data from OpenStreetMap and opening it in GeoPandas</a></li>
-  <li>Manipulating geodata with GeoPandas</li>
+  <li style="text-decoration: underline;"><a href="{{ site.baseurl }}/2015/04/29/geopandas-manipulation/">Manipulating geodata with GeoPandas</a></li>
   <li>Fuzzily cleaning data with fuzzywuzzy</li>
   <li>Building a baseline classifier in scikit-learn</li>
   <li>How to efficiently add features to a classifier using Pipelines</li>

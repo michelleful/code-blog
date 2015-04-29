@@ -133,6 +133,7 @@ your changes may not be reflected for some time with Metro Extracts.
 As for whether downloading the zip file, unzipping it, and processing the appropriate
 GeoJSON file is more or less convenient versus querying OpenStreetMap directly, that's entirely up to your workflow.
 
-In the next post, I'll show two examples of geographic manipulation that show how GeoPandas makes easy things easy and (medium-)difficult things possible.
+In [the next post]({{ site.baseurl }}/2015/04/29/geopandas-manipulation/), I'll show two examples of geographic manipulation with GeoPandas
+and a related library, Shapely.
 The first, simple example will filter our bounding box-derived dataframe with too many roads down to just those within the administrative boundaries.
 The second, slightly more complicated example will compute the median point of all roads that share a name. See you then.
