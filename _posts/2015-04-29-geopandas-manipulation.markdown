@@ -168,4 +168,4 @@ but one day it will all be done within GeoPandas). Of course, since GeoPandas is
 operations on non-geographic data are still available.
 
 Next time, we'll talk about another data preparation problem I had with the OpenStreetMap
-data: typos in the street names, and how I cleaned them up using the `fuzzywuzzy` library. Till next time.
+data: typos in the street names, and [how I cleaned them up using the `fuzzywuzzy` library]({{ site.baseurl }}/2015/05/20/cleaning-text-with-fuzzywuzzy/). Till next time.

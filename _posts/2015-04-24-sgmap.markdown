@@ -72,16 +72,16 @@ figure out which roads belonged to which categories, and plot that. Easy, right?
 
 ### The plan
 
-The first step was easy enough, at first glance. Singapore is pretty well-represented on [OpenStreetMap](https://www.openstreetmap.org/relation/536780), 
-the crowd-sourced, openly licensed map of the world. But then I found that I needed to do all sorts of manipulation on the data. To my rescue came 
-[GeoPandas](https://github.com/geopandas/geopandas), 
-an extension to the Pandas data analysis library that knows about geodata formats and can do all sorts of geographical manipulation and plotting. 
+The first step was easy enough, at first glance. Singapore is pretty well-represented on [OpenStreetMap](https://www.openstreetmap.org/relation/536780),
+the crowd-sourced, openly licensed map of the world. But then I found that I needed to do all sorts of manipulation on the data. To my rescue came
+[GeoPandas](https://github.com/geopandas/geopandas),
+an extension to the Pandas data analysis library that knows about geodata formats and can do all sorts of geographical manipulation and plotting.
 Using GeoPandas, I could filter and extract out the exact data I needed.
 
-The next step was to assign categories to road names. I suppose I could have done this manually - there were only ~2000 unique names - 
-but it would be tedious, and I wanted to try out [scikit-learn](http://scikit-learn.org/stable/), the Python machine learning library. 
-Since I would be using supervised classification, which requires some labelled training data, I'd be doing 
-some labelling anyway, but only a subset. 
+The next step was to assign categories to road names. I suppose I could have done this manually - there were only ~2000 unique names -
+but it would be tedious, and I wanted to try out [scikit-learn](http://scikit-learn.org/stable/), the Python machine learning library.
+Since I would be using supervised classification, which requires some labelled training data, I'd be doing
+some labelling anyway, but only a subset.
 
 I decided to take an iterative approach to this: manually label 10% of the dataset, and use that as training data for
 an initial classifier. Use the classifier to train the next 10%, and hand-edit the incorrect labels. Now I'd have 20% of the dataset
@@ -90,13 +90,13 @@ labelled, which I could use to train a better classifier, which I could use to l
 I was asked at PyCon why I took this approach and I don't think I gave a very thorough answer. It was really a mixture of four practical and psychological reasons:
 
 * I'd only be addressing 10% of the data, or about 200 roads, at any one time. Much better than labelling a stack of 1000 roadnames!
-* I'd need only 2 seconds or so to glance at a label and verify it was correct, 
+* I'd need only 2 seconds or so to glance at a label and verify it was correct,
   and maybe 10 seconds to edit it (unless it needed further research, in which case it could take several minutes).
   Let's suppose 30% of the roads came back labelled incorrectly. That's about 15 minutes of work.
   Whereas labelling 200 roads from scratch would take twice as long.
 * You know how they say the best way to get your question answered on the Internet is to post an incorrect hypothesis?
-  Well, it was similar for me: when I saw that a road was labelled wrongly, I itched to correct it, 
-  whereas staring at a screen of road names with an empty column for labels was a great procrastination trigger. 
+  Well, it was similar for me: when I saw that a road was labelled wrongly, I itched to correct it,
+  whereas staring at a screen of road names with an empty column for labels was a great procrastination trigger.
 * As the amount of labelled training data increased, the classifier gradually got better (although it peaked at about 50-60% of the data),
   so I had less and less work to do as time went on.
 
@@ -114,7 +114,7 @@ So here's the rough plan for the blogposts (if there's a link it's up):
 <ul>
   <li style="text-decoration: underline;"><a href="{{ site.baseurl }}/2015/04/27/osm-data/">Getting data from OpenStreetMap and opening it in GeoPandas</a></li>
   <li style="text-decoration: underline;"><a href="{{ site.baseurl }}/2015/04/29/geopandas-manipulation/">Manipulating geodata with GeoPandas</a></li>
-  <li>Fuzzily cleaning data with fuzzywuzzy</li>
+  <li style="text-decoration: underline;"><a href="{{ site.baseurl }}/2015/05/20/cleaning-text-with-fuzzywuzzy/">Fuzzily cleaning data with fuzzywuzzy</a></li>
   <li>Building a baseline classifier in scikit-learn</li>
   <li>How to efficiently add features to a classifier using Pipelines</li>
   <li>Making the map in multiple ways</li>
