@@ -15,8 +15,7 @@ tags:
 ---
 
 I'm doing some natural language processing on (Mandarin) Chinese text right now,
-using Stanford's NLP tools. I had to jump through a few hoops to get it working
-due to documentation version mismatches, so I'm documenting the steps here.
+using Stanford's NLP tools, and I'm documenting the steps here.
 I'm just calling the tools from the command line, in a Unix environment, so
 if your use case is different from that, this probably won't help you.
 
@@ -86,7 +85,7 @@ parse, which shows the syntactic structure of the sentence:
               (NP (NN 囚笼)))))))
 
 And a dependency parse, which shows, broadly speaking, the grammatical relations
-the constituents have to each other:
+the words have to each other:
 
     nsubj(囚笼-8, 世界-1)
     advmod(囚笼-8, 就-2)
@@ -97,11 +96,9 @@ the constituents have to each other:
     case(疯子-6, 的-7)
     root(ROOT-0, 囚笼-8)
 
-The dependency parse is induced from the constituency parse.
-
-It was this step that I had trouble with, because the docs reflect an earlier
-version of the software in which the various parsing models were in separate
-files, whereas they are now all stuffed into `stanford-parser-3.5.2-models.jar`.
+There are specialized dependency parsers out there, but the Stanford parser first
+does a constituency parse and converts it to a dependency parse. This
+approach [seems to work better in general](http://nlp.stanford.edu/pubs/lrecstanforddeps_final_final.pdf).
 
 There are five Chinese parsing models supplied with the software, which
 you can see by `less`-ing the `stanford-parser-3.5.2-models.jar` file.
@@ -124,35 +121,36 @@ unsegmented text, allowing us to bypass the segmentation procedure in Step 1.
 However, this isn't recommended as it doesn't perform as well as the standalone
 Segmenter.
 
-Now that we've chosen our model, here's how to get the constituency parse:
+Now that we've chosen our model, it's time to actually do the parsing.
+There is a `lexparser-lang.sh` helper script, but it assumes you're using
+GB18030 encoding for your Chinese text. It's simple to edit the script
+to include an `-encoding utf-8` flag, but it's not that much more difficult
+to just construct the Java call yourself.
 
-{% highlight bash %}
-java
--mx500m
--cp stanford-parser.jar:stanford-parser-3.5.2-models.jar edu.stanford.nlp.parser.lexparser.LexicalizedParser
--encoding utf-8
-edu/stanford/nlp/models/lexparser/chineseFactored.ser.gz
-path/to/segmented.file > path/to/constituency.parsed.file
-{% endhighlight %}
+Here's how to get the constituency parse:
+
+    java
+    -mx500m
+    -cp stanford-parser.jar:stanford-parser-3.5.2-models.jar edu.stanford.nlp.parser.lexparser.LexicalizedParser
+    -encoding utf-8
+    edu/stanford/nlp/models/lexparser/chineseFactored.ser.gz
+    path/to/segmented.file > path/to/constituency.parsed.file
 
 To get the dependency parse, just add an `outputFormat` flag, and specify
 `typedDependencies`:
 
-{% highlight bash %}
-java
--mx500m
--cp stanford-parser.jar:stanford-parser-3.5.2-models.jar edu.stanford.nlp.parser.lexparser.LexicalizedParser
--encoding utf-8
--outputFormat typedDependencies
-edu/stanford/nlp/models/lexparser/chineseFactored.ser.gz
-path/to/segmented.file > path/to/dependency.parsed.file
-{% endhighlight %}
+    java
+    -mx500m
+    -cp stanford-parser.jar:stanford-parser-3.5.2-models.jar edu.stanford.nlp.parser.lexparser.LexicalizedParser
+    -encoding utf-8
+    -outputFormat typedDependencies
+    edu/stanford/nlp/models/lexparser/chineseFactored.ser.gz
+    path/to/segmented.file > path/to/dependency.parsed.file
 
 Incidentally, the parse that was chosen for this sentence is *not*
 the intended reading -- it's interpreting the sentence as
 "The world is the den of a single (unspecified) crazy person".
-(Which with all the US election coverage, seems scarily close to being
-true.)
+Which seems scarily close to truth.
 
 You might want to consider the possibility of multiple parses, therefore.
 To get multiple parses, we need to use one of the PCFG parsers
