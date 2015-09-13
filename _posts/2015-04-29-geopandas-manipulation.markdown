@@ -111,7 +111,7 @@ the road planners ran out of imagination and did things like this:
 <img class="center-block" src="{{ site.baseurl }}/assets/images/201504/lentor.png" alt="Lentor neighbourhood, where all the roads save two are named Lentor something">
 <small class="center-block">&copy; Open Street Map contributors</small>
 
-So each "road name" like "Lentor" represents not just one road but a potential multitude of roads. 
+So each "road name" like "Lentor" represents not just one road but a potential multitude of roads.
 Suppose we want to give a geographic identity to each of these names - say, the centroid of all the roads with the same base name.
 Pandas/GeoPandas and the Shapely library make that fairly straightforward.
 
@@ -120,7 +120,7 @@ We call the resultant column `road_name`. We do a `groupby` on this column to ga
 We then call an aggregate function on this `groupby` to merge all the LineStrings in the `geometry` column together into a MultiLineString.
 Then we obtain the centroids of these MultiLineStrings.
 
-Here's the code, written by Jake Wasserman (with a slight modification from me):
+Here's the code, written by Jake Wasserman (slightly modified):
 
 {% highlight python %}
 import shapely.ops
@@ -140,7 +140,7 @@ Admiralty        POINT (103.8052864229348 1.455624490789475)
 {% endhighlight %}
 
 (Note: The reason we have to call `linemerge` on `x.values` is because right now, `shapely` functions operate on lists, not numpy arrays
-which are the bases for Series/GeoSeries. One day this line will be as simple as `roads.groupby('name')['geometry'].apply(linemerge)` -
+which are the bases for Series/GeoSeries. One day this line will be as simple as `df.groupby('name')['geometry'].apply(linemerge)` -
 just monitor [this issue](https://github.com/Toblerity/Shapely/issues/226).)
 
 The output is a Pandas Series. The left hand "column" is actually an index and the right-hand column is just the values in the Series.
