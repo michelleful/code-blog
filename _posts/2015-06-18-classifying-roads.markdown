@@ -141,6 +141,8 @@ as best it can, with as large a margin as possible.
 
 ![How linear SVC works: draw a line between the two sets of points with as large a margin as possible]({{ site.baseurl }}/assets/images/201506/svm2_new.png)
 
+This line is our model.
+
 Now suppose we have two new points that we don't know the labels of.
 
 ![Introducing two new unknown points]({{ site.baseurl }}/assets/images/201506/svm3_new.png)
@@ -149,7 +151,10 @@ The classifier looks at where they fall with respect to the line, and tells us w
 
 ![Classify the new points based on where they fall with respect to the line]({{ site.baseurl }}/assets/images/201506/svm4_new.png)
 
-In higher-dimensional space, the line becomes a hyperplane. And of course, not all datasets fall so smoothly into separate camps. But the basic intuition is still the same.
+Obviously, I've simplified a lot of things.
+In higher-dimensional space, the line becomes a hyperplane.
+And of course, not all datasets fall so smoothly into separate camps.
+But the basic intuition is still the same.
 
 ### Step 6: Test the classifier
 
