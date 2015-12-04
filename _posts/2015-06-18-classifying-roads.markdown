@@ -198,4 +198,4 @@ Here are some ideas for improving it:
 * **Adding more features.** Yes! There's a lot of information in the data that's not reflected by n-grams. We could try that.
 * **Hyperparameter tuning.** We invoked `LinearSVC` with no arguments, but we can pass it hyperparameters that tweak how it works. This is pretty fiddly. Let's see where we get with the other strategies.
 
-In the next article, I'll talk about how to easily add more features to our classifier. Till then.
+In [the next article](({{ site.baseurl }}/2015/06/20/pipelines/)), I'll talk about how to easily add more features to our classifier. Till then.
