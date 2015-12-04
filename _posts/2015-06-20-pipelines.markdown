@@ -20,7 +20,7 @@ Previous articles in this series:
 * [4. Cleaning text data with fuzzywuzzy]({{ site.baseurl }}/2015/05/20/cleaning-text-with-fuzzywuzzy/)
 * [5. Building a street name classifier with scikit-learn]({{ site.baseurl }}/2015/06/18/classifying-roads/)
 
-In the [last article](({{ site.baseurl }}/2015/06/18/classifying-roads/)), we built a baseline classifier for street names. The results were a bit disappointing at 55% accuracy. In this article, we'll add more features, and streamline the code with `scikit-learn`'s `Pipeline` and `FeatureUnion` classes.
+In the [last article]({{ site.baseurl }}/2015/06/18/classifying-roads/), we built a baseline classifier for street names. The results were a bit disappointing at 55% accuracy. In this article, we'll add more features, and streamline the code with `scikit-learn`'s `Pipeline` and `FeatureUnion` classes.
 
 I learned a lot about Pipelines and FeatureUnions from [Zac Stewart's article on the subject](http://zacstewart.com/2014/08/05/pipelines-of-featureunions-of-pipelines.html), which I recommend.
 
