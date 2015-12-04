@@ -214,4 +214,4 @@ grid.best_score_
 Ultimately, after adding in more features, adding more data, and doing
 hyperparameter tuning, I had about 75-80% accuracy, which was good enough for me.
 I only had to hand-correct 20-25% of the roads, which didn't seem too daunting.
-I was ready to make my map. That's what we'll do in the next article.
+I was ready to make my map. That's what we'll do in [the next article]({{ site.baseurl }}/2015/07/15/making-maps/).
