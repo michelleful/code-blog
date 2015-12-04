@@ -4,21 +4,21 @@ title:  "Setting up a Jekyll blog on Github Pages"
 subtitle: "A comprehensive manual"
 author: "Michelle Fullwood"
 header-img: "img/post-bg-01.jpg"
-tags: 
-- jekyll 
-- howto 
+tags:
+- jekyll
+- howto
 - github
 ---
 
 Welcome! I've set up this blog to share what I've been learning
-through venues such as meetups 
-([Boston Python User Group](http://www.meetup.com/bostonpython/) 
+through venues such as meetups
+([Boston Python User Group](http://www.meetup.com/bostonpython/)
 and [PyLadies Boston](http://www.meetup.com/PyLadies-Boston/)
-are my main ones), conferences ([Pycon 2014](https://us.pycon.org/2014/) 
-in Montreal!), MOOCs ([Udacity](http://udacity.com) and 
-[Coursera](http://coursera.org)). 
+are my main ones), conferences ([Pycon 2014](https://us.pycon.org/2014/)
+in Montreal!), MOOCs ([Udacity](http://udacity.com) and
+[Coursera](http://coursera.org)).
 I decided to make this a [Jekyll](http://jekyllrb.com) blog, hosted on
-[Github Pages](http://pages.github.com/), 
+[Github Pages](http://pages.github.com/),
 and I'm going to describe the process of setting it up as my first post.
 
 ### What are Jekyll and Github Pages?
@@ -33,15 +33,15 @@ you can update your blog by just making a `git commit`.
 Some things to be aware of before making the decision to go with the
 Jekyll/Github Pages combination:
 
-* You won't be able to use Jekyll plug-ins on Github Pages, because 
+* You won't be able to use Jekyll plug-ins on Github Pages, because
   Github generates Pages sites with `jekyll --safe`. However,
   there is a workarond: you can generate the static files yourself
   and commit those to your repository.
 * By default, Jekyll doesn't come with comments, and you won't be able to use
-  the Jekyll comments plug-ins. Instead, 
-  [you can use third party commenting solutions]({% post_url 2014-03-16-adding-third-party-comments-to-a-jekyll-blog %}) 
+  the Jekyll comments plug-ins. Instead,
+  [you can use third party commenting solutions]({{ site.baseurl }}/2​014/03/16/​adding-thi​rd-party-c​omments-to​-a-jekyll-​blog/)
   included via only Javascript such as [Disqus](http://disqus.com/) as an alternative.
-  
+
 I found various guides to how to set up Jekyll with Github Pages:
 
 * [Getting started With Github Pages (24 Ways)](http://24ways.org/2013/get-started-with-github-pages/)
@@ -52,8 +52,8 @@ There's also the official documentation:
 * [Github Pages docs](https://help.github.com/categories/20/articles) [(Jekyll page)](https://help.github.com/articles/using-jekyll-with-pages)
 * [Jekyll's Github Pages docs](http://jekyllrb.com/docs/github-pages/)
 
-In this post, I'll describe the process of setting up a minimal Jekyll blog, 
-without messing about with the look, using the best practices I gathered 
+In this post, I'll describe the process of setting up a minimal Jekyll blog,
+without messing about with the look, using the best practices I gathered
 from the sites linked above.
 
 ### Setting up your Jekyll blog in Github Pages
@@ -62,19 +62,19 @@ In eight easy steps:
 
 **Step 1.** Decide whether you want your page to be hosted at
    `username.github.io` or `username.github.io/projectname`.
-   
+
 I decided to reserve the former for a possible homepage rather than my code
 blog, so I decided to go with the latter, and the instructions below will
 be for this usecase. If the former, your repo must be named
 `username.github.io` and you will work on the `master` branch.
 If the latter, you can name your repo anything you want,
 but you will work on a branch called `gh-pages`.
-The instructions below will be for a project page. 
+The instructions below will be for a project page.
 [(More)](https://help.github.com/articles/user-organization-and-project-pages)
 
 **Step 2.** Set up your Github project repository
 
-I usually do this through Github, 
+I usually do this through Github,
 clicking the green New button on the Repositories tab.
 I called my repo `code-blog`. This means that my blog will live at
 `michelleful.github.io/code-blog`.
@@ -92,7 +92,7 @@ The `--orphan` flag means it will create an empty branch, just what we want.
 
 **Step 4.** Install Ruby, Bundler and Jekyll.
 
-Basically, follow the advice on 
+Basically, follow the advice on
 [this page](https://help.github.com/articles/using-jekyll-with-pages),
 but I'll recapitulate it here:
 
@@ -116,7 +116,7 @@ sudo gem install bundler
 bundler install
 {% endhighlight %}
 
-If everything goes well, you'll get this message: 
+If everything goes well, you'll get this message:
 
 {% highlight text %}
 Your bundle is complete!
@@ -131,7 +131,7 @@ jekyll new .
 
 This creates several files and subdirectories:
 
-* `index.html` serves up the main page 
+* `index.html` serves up the main page
 * `_config.yml` contains configuration options
 * `_layouts/` contains the code that controls the look and feel of the site
 * `_posts/` is where you'll put your actual blogpost textfiles.
@@ -146,7 +146,7 @@ This creates several files and subdirectories:
 bundle exec jekyll serve
 {% endhighlight %}
 
-If you go to `localhost:4000` in your browser now, you should see 
+If you go to `localhost:4000` in your browser now, you should see
 a basic Jekyll site.
 
 **Step 7.** Edit the configuration and layout files to use `site.baseurl`
@@ -218,13 +218,13 @@ of your blog, etc. [Start here!](http://jekyllrb.com/docs/frontmatter/)
 ### Troubleshooting
 
 **Problem 1.** You get the following error while executing the command
-`sudo gem install bundler`. 
+`sudo gem install bundler`.
 
 {% highlight text %}
 Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
 
-/usr/bin/ruby1.9.1 extconf.rb 
-/usr/lib/ruby/1.9.1/rubygems/custom_require.rb:36:in `require': 
+/usr/bin/ruby1.9.1 extconf.rb
+/usr/lib/ruby/1.9.1/rubygems/custom_require.rb:36:in `require':
 cannot load such file -- mkmf (LoadError)
 from /usr/lib/ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
 from extconf.rb:1:in `<main>'
@@ -260,10 +260,10 @@ Check the following:
 You might have missed a relative URL in `_layouts/default.html`. Go back to
 Step 7.
 
-**Problem 4.** When you click on a blogpost, you get a 
+**Problem 4.** When you click on a blogpost, you get a
 "404: There isn't a GitHub Page here".
 
-Check to see whether the blogpost URL it's looking for is of the form 
+Check to see whether the blogpost URL it's looking for is of the form
 `username.github.io/projectname/year/month/day/...`.
-If it's missing `projectname`, you missed a relative URL in `index.html`. 
+If it's missing `projectname`, you missed a relative URL in `index.html`.
 Go back to Step 7.

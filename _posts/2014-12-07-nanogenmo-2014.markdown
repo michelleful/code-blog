@@ -27,7 +27,7 @@ One of the tools they released was [a list of hierarchical word clusters](http:/
 
 > really rly realy genuinely rlly reallly realllly reallyy rele realli relly reallllly reli reali sholl
   rily reallyyy reeeeally realllllly reaally reeeally rili reaaally reaaaally reallyyyy rilly
-  reallllllly reeeeeally reeally shol realllyyy reely relle reaaaaally shole really2 reallyyyyy 
+  reallllllly reeeeeally reeally shol realllyyy reely relle reaaaaally shole really2 reallyyyyy
   \_really\_ realllllllly reaaly realllyy reallii reallt genuinly relli realllyyyy reeeeeeally weally
   reaaallly reallllyyy
 
@@ -117,7 +117,7 @@ Also, there were [90 other completed novels at NaNoGenMo](https://github.com/dar
 
 * [Pride and Prejudice and Word Vectors](https://github.com/dariusk/NaNoGenMo-2014/issues/114) by [arnicas](https://github.com/arnicas) is Lynn Cherny's novel, which used word2vec to replace nouns with their nearest neighbour - which often turns out to be the opposite gendered word, so there's an added genderswap effect. Wonderful dataviz beside the actual novel.
 
-* [Swann's Way Through The Night Land](https://github.com/dariusk/NaNoGenMo-2014/issues/91) by [VincentToups](Swann's Way Through The Night Land) also used word2vec, this time to substitute sentences in *The Nightland* by William Hope Hodgson with their nearest sentences in *Swann's Way* by Proust, so that the structure of the novel is the former but the content is from the latter.
+* [Swann's Way Through The Night Land](https://github.com/dariusk/NaNoGenMo-2014/issues/91) by [VincentToups](https://github.com/VincentToups) also used word2vec, this time to substitute sentences in *The Nightland* by William Hope Hodgson with their nearest sentences in *Swann's Way* by Proust, so that the structure of the novel is the former but the content is from the latter.
 
 * [Doby Mick; or, the excessively-Spoonerized Whale](https://github.com/dariusk/NaNoGenMo-2014/issues/110) by [cpressey](https://github.com/cpressey) is a wonderfully-executed spoonerization of *Moby Dick*, with onsets swapped between words.
 
