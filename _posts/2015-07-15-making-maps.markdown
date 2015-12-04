@@ -114,7 +114,7 @@ line-opacity: 0.7;
 {% endhighlight %}
 
 If these are too fiddly, some web mapping solutions also use CartoCSS.
-I really like [CartoDB](cartodb.com), which is how I made my main map:
+I really like [CartoDB](https://cartodb.com), which is how I made my main map:
 
 <iframe width='100%' height='520' frameborder='0' src='http://michelleful.cartodb.com/viz/b722485c-dbf6-11e4-9a7e-0e0c41326911/embed_map'></iframe>
 
