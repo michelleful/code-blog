@@ -39,7 +39,7 @@ Jekyll/Github Pages combination:
   and commit those to your repository.
 * By default, Jekyll doesn't come with comments, and you won't be able to use
   the Jekyll comments plug-ins. Instead,
-  [you can use third party commenting solutions]({{ site.baseurl }}/2​014/03/16/​adding-thi​rd-party-c​omments-to​-a-jekyll-​blog/)
+  you can use third party commenting solutions
   included via only Javascript such as [Disqus](http://disqus.com/) as an alternative.
 
 I found various guides to how to set up Jekyll with Github Pages:
