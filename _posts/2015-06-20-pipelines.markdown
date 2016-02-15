@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using Pipelines and FeatureUnions in scikit-learn
-subtitle: Fifth in a series on scikit-learn and GeoPandas
+subtitle: Sixth in a series on scikit-learn and GeoPandas
 author: Michelle Fullwood
 header-img: "img/old_singapore_map_greyscale.jpg"
 header-img-credit: <a href="http://commons.wikimedia.org/wiki/Atlas_of_Singapore#/media/File:Part_of_Singapore_Island_(British_Library_India_Office_Records,_1825,_detail).jpg">Wikimedia Commons</a>
